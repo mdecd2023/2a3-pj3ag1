@@ -1,0 +1,340 @@
+\documentclass[14pt,a4paper]{report}  %紙張設定
+\usepackage{xeCJK}%中文字體模組
+%\setCJKmainfont{標楷體} %設定中文字體
+\setCJKmainfont{MoeStandardKai.ttf}
+%\newfontfamily\sectionef{Times New Roman}%設定英文字體
+\newfontfamily\sectionef{Nimbus Roman}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb}%數學公式、符號
+\usepackage{amsfonts} %數學簍空的英文字
+\usepackage{graphicx, subfigure}%圖形
+\usepackage{fontawesome5} %引用icon
+\usepackage{type1cm} %調整字體絕對大小
+\usepackage{textpos} %設定文字絕對位置
+\usepackage[top=2.5truecm,bottom=2.5truecm,
+left=3truecm,right=2.5truecm]{geometry}
+\usepackage{titlesec} %目錄標題設定模組
+\usepackage{titletoc} %目錄內容設定模組
+\usepackage{textcomp} %表格設定模組
+\usepackage{multirow} %合併行
+%\usepackage{multicol} %合併欄
+\usepackage{CJK} %中文模組
+\usepackage{CJKnumb} %中文數字模組
+\usepackage{wallpaper} %浮水印
+\usepackage{listings} %引用程式碼
+\usepackage{hyperref} %引用url連結
+\usepackage{setspace}
+\usepackage{lscape}%設定橫式
+\lstset{language=Python, %設定語言
+		basicstyle=\fontsize{10pt}{2pt}\selectfont, %設定程式內文字體大小
+		frame=lines,	%設定程式框架為線
+}
+%\usepackage{subcaption}%副圖標
+\graphicspath{{./../images/}} %圖片預設讀取路徑
+\usepackage{indentfirst} %設定開頭縮排模組
+\renewcommand{\figurename}{\Large 圖.} %更改圖片標題名稱
+\renewcommand{\tablename}{\Large 表.}
+\renewcommand{\lstlistingname}{\Large 程式.} %設定程式標示名稱
+\hoffset=-5mm %調整左右邊界
+\voffset=-8mm %調整上下邊界
+\setlength{\parindent}{3em}%設定首行行距縮排
+\usepackage{appendix} %附錄
+\usepackage{diagbox}%引用表格
+\usepackage{multirow}%表格置中
+%\usepackage{number line}
+%=------------------更改標題內容----------------------=%
+\titleformat{\chapter}[hang]{\center\sectionef\fontsize{20pt}{1pt}\bfseries}{\LARGE 第\CJKnumber{\thechapter}章}{1em}{}[]
+\titleformat{\section}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesection}}{0.5em}{}[]
+\titleformat{\subsection}[hang]{\sectionef\fontsize{18pt}{2.5pt}\bfseries}{{\thesubsection}}{1em}{}[]
+%=------------------更改目錄內容-----------------------=%
+\titlecontents{chapter}[11mm]{}{\sectionef\fontsize{18pt}{2.5pt}\bfseries\makebox[3.5em][l]
+{第\CJKnumber{\thecontentslabel}章}}{}{\titlerule*[0.7pc]{.}\contentspage}
+\titlecontents{section}[18mm]{}{\sectionef\LARGE\makebox[1.5em][l]
+{\thecontentslabel}}{}{\titlerule*[0.7pc]{.}\contentspage}
+\titlecontents{subsection}[4em]{}{\sectionef\Large\makebox[2.5em][l]{{\thecontentslabel}}}{}{\titlerule*[0.7pc]{.}\contentspage}
+%=----------------------章節間距----------------------=%
+\titlespacing*{\chapter} {0pt}{0pt}{18pt}
+\titlespacing*{\section} {0pt}{12pt}{6pt}
+\titlespacing*{\subsection} {0pt}{6pt}{6pt}
+%=----------------------標題-------------------------=%             
+\begin{document} %文件
+\sectionef %設定英文字體啟用
+\vspace{12em}
+\begin{titlepage}%開頭
+\begin{center}   %標題  
+\makebox[1.5\width][s] %[s] 代表 Stretch the interword space in text across the entire width
+{\fontsize{24pt}{2.5pt}國立虎尾科技大學}\\[18pt]
+\makebox[1.5\width][s]
+{\fontsize{24pt}{2.5pt}機械設計工程系}\\[18pt]
+\sectionef\fontsize{24pt}{1em}\selectfont\textbf
+{
+\vspace{0.5em}
+cd2023 2a2-pj2ag2分組報告}\\[18pt]
+%設定文字盒子 [方框寬度的1.5倍寬][對其方式為文字平均分分布於方框中]\\距離下方18pt
+\vspace{1em} %下移
+\fontsize{30pt}{1pt}\selectfont\textbf{網際手足球場景設計}\\
+\vspace{1em}
+\sectionef\fontsize{30pt}{1em}\selectfont\textbf
+{
+\vspace{0.5em}
+Web-based Foosball Scene Design}
+ \vspace{2em}
+%=---------------------參與人員-----------------------=%             
+\end{center}
+\begin{flushleft}
+\begin{LARGE}
+
+\hspace{32mm}\makebox[5cm][s]
+{指導教授：\quad 嚴\quad 家\quad 銘\quad 老\quad 師}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{班\qquad 級：\quad 四\quad 設\quad 二\quad 甲}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{學\qquad 生：\quad 第\quad 一\quad 位\quad(41023191)}
+\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{\hspace{36.5mm}第\quad 二\quad 位\quad(41023192)}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{\hspace{36.5mm}第\quad 三\quad 位\quad(41023193)}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{\hspace{36.5mm}第\quad 四\quad 位\quad(41023194)}\\[6pt]
+\hspace{32mm}\makebox[5cm][s]
+{\hspace{36.5mm}第\quad 五\quad 位\quad(41023195)}\\[6pt]
+%設定文字盒子[寬度為5cm][對其方式為文字平均分分布於方框中]空白距離{36.5mm}\空白1em
+\end{LARGE}
+\end{flushleft}
+\vspace{6em}
+\fontsize{18pt}{2pt}\selectfont\centerline{\makebox[\width][s]
+{中華民國\hspace{3em} 
+112 \quad 年\quad 3\quad 月}}
+\end{titlepage}
+\newpage
+%=---------------報告製作核可證明---------------------=%
+ {\renewcommand\baselinestretch{1.4}\selectfont %設定以下行距
+ {\begin{center}
+    {\fontsize{20pt}{2.5pt} {國立虎尾科技大學 \qquad 機械設計工程系}\\[8pt]{分組報告製作合格認可證明}\\
+    \hspace*{\fill} \\ %似enter鍵換行
+    \par}
+     \end{center}}
+    {\begin{textblock}{60}(1.85,0.8)
+    \noindent \fontsize{15pt}{16pt}\selectfont 分組報告製作修習學生\enspace:\quad
+    {\begin{minipage}[t]{10em}\underline{四設二甲\enspace 41023191 第一位}\\ \underline{四設二甲\enspace 41023192\enspace 第二位}\\ \underline{四設二甲\enspace 41023193\enspace 第三位}\\ \underline{四設二甲\enspace 41023194\enspace 第四位}\\ \underline{四設二甲\enspace 41023195\enspace 第五位}\\ %下劃線符號指令
+    \end{minipage}}
+         \par} %結束指定行距
+    {\renewcommand\baselinestretch{1.2}\selectfont %設定以下行距
+    {\begin{textblock}{30}(1.8,4)
+    \noindent \fontsize{16pt}{16pt}\selectfont 分組報告題目\enspace ：網際手足球場景設計
+    \hspace*{\fill} \\
+    \hspace*{\fill} \\
+    \noindent \fontsize{16pt}{16pt}\selectfont 經評量合格，特此證明
+    \hspace*{\fill} \\
+    \hspace*{\fill} \\
+    \noindent \fontsize{16pt}{16pt} \makebox[6em][s]{評審委員}\enspace:\quad
+    {\begin{minipage}[t]{6em} \underline{　　　　　　　　　　　　}\\[16pt] \underline{　　　　　　　　　　　　}\\[16pt] \underline{　　　　　　　　　　　　}\\
+    \end{minipage}}
+    \end{textblock}}
+    {\begin{textblock}{10}(1.8,9)
+    {\begin{flushleft}
+    \fontsize{16pt}{16pt}\selectfont \makebox[6em][s]{指導老師}\enspace:\quad \underline{　　　　　　　　　　　　}\\[10pt]
+    \hspace*{\fill} \\
+    \fontsize{16pt}{2.5pt}\selectfont \makebox[12em][s]{中華民國一一二年}\hspace{2pt}
+    \fontsize{16pt}{2.5pt}\selectfont\makebox[8em][s]{三月三十一日}
+    \end{flushleft}}
+    \end{textblock}}
+    \end{textblock}}
+     \par} %結束指定行距
+     \newpage
+
+%=------------------------摘要-----------------------=%
+\input{abstract.tex}
+\newpage
+%=------------------------誌謝----------------------=%
+\addcontentsline{toc}{chapter}{誌~~~謝}
+\centerline\LARGE\textbf{誌~~謝}\\
+\begin{flushleft}
+\fontsize{14pt}{2.5pt}\hspace{12pt}\quad 在此鄭重感謝製作以及協助本分組報告完成的所有人員，首先向大三學長致謝，他們不辭辛勞解決我們的提問，甚至從來沒有不耐煩，總是貼心為我們找出最佳解答。再來是我們的分組組長，他給了我們全方位的支援，提供我們解決問題的方向和建議，給予開始接觸網際對戰遊戲的我們有個學習的方向，開會時也時不時向我們提出建議以及未來走向，同時也給了我們能自由摸索的空間及時間，最後是由本分組組員同心協力才得以完成本報告，特此感謝。
+\end{flushleft}
+\newpage
+%=------------------------目錄----------------------=%
+\renewcommand{\contentsname}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{目\quad 錄}}}
+\tableofcontents　　%目錄產生
+\newpage
+%=------------------圖表目錄產生----------------------=%
+\renewcommand{\listfigurename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{圖\quad 目\quad 錄 }}}
+\newcommand{\loflabel}{圖} %定義\loflabel 文字為圖
+\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{0.5em}}
+\listoffigures
+%\newcommand{\captioname}{圖}
+\newpage
+\renewcommand{\listtablename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{表\quad 目\quad 錄 }}}
+\newcommand{\lotlabel}{表} %定義\lotlabel 文字為表
+\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{0.5em}}
+\listoftables
+
+\end{center}
+%=-------------------------內容----------------------=%
+\input{1_introduction.tex}
+\input{2_machine_learning.tex}
+\input{3_training_env.tex}
+\input{4_simulation.tex}
+\input{5_server.tex}
+\input{6_training_result.tex}
+\input{7_suggestion.tex}
+\input{8_discussions.tex}
+%=---------------------參考文獻----------------------=%
+\input{9_reference.tex}
+%=---------------附錄-----------------=%
+\addcontentsline{toc}{chapter}{附錄} %新增目錄名稱
+\input{10_appendix.tex}
+\newpage
+%=-------------作者簡介-----------------=%
+    \addcontentsline{toc}{chapter}{作者簡介}
+    \begin{center}
+	\fontsize{20pt}{0em}\selectfont \bf{作者簡介}\\
+	\end{center}	
+	{\begin{textblock}{6}(0,0.5)
+	\begin{figure}
+	\includegraphics[width=1.25in]{member1}  %作者照片
+	\end{figure}
+	\end{textblock}}
+	{\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+	{\begin{textblock}{15}(3.5,0.7)%{寬度}(以左上角為原點之右移量,下移量)
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{第一位}\\     \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{41023191} \\ %\makebox為文本盒子
+    \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立台灣第一高工}\\
+    \fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+    \fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械工程科}\\
+    \hspace*{\fill} \\
+    \fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+   % \hspace*{\fill} \\
+   \vspace{2em}
+	{\begin{textblock}{6}(0,2.3)
+	\begin{figure}
+	\includegraphics[width=1.15in]{member2}  %作者照片
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}
+    \selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,2.5) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{第二位}\\ 
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{41023192} \\ 
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立台灣第一高工}\\
+\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械製圖科}\\
+\hspace*{\fill} \\
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    %\hspace*{\fill} \\
+    \vspace{2em}
+    {\begin{textblock}{6}(0,4.1)
+    \begin{figure}
+        \includegraphics[width=1.15in]{member3} %{}內是圖片文件的相對路徑
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,4.3) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace%\noindent指定首行不進行縮排
+\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{第三位}\\ 
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{41023193} \\ %\makebox為文本盒子
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立台灣第一高工}\\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械工程科}\\
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+   % \hspace*{\fill} \\
+   \vspace{2em}
+    {\begin{textblock}{6}(0,5.9)
+    \begin{figure}
+        \includegraphics[width=1.15in]{member4} %{}內是圖片文件的相對路徑
+    \end{figure}
+    \end{textblock}}
+    {\renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,6.1) %{寬度}(以左上角為原點之右移量,下移量)
+\noindent\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{第四位}\\ \hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{41023194} \\ \hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立台灣第一高工}\\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械製圖科}\\
+\hspace*{\fill} \\
+\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}}
+    %\hspace*{\fill} \\
+\vspace{2em}
+    {\begin{textblock}{6}(0,7.7)
+    \begin{figure}
+        \includegraphics[width=1.15in]{member5} %{}內是圖片文件的相對路徑
+    \end{figure}
+    \end{textblock}}
+    \renewcommand\baselinestretch{0.99}\selectfont %設定以下行距
+    {\begin{textblock}{15}(3.5,7.9) %{寬度}(以左上角為原點之右移量,下移量)
+	\noindent\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{姓名}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{第五位}\\ \hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{學號}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{41023195} \\ \hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{畢業學校}\enspace:\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[9em][s]{國立台灣第一高工}\\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[5em][s]{\quad}\enspace\enspace
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[8em][s]{機械工程科}\\
+	\hspace*{\fill} \\
+	\noindent\fontsize{14pt}{0em}\selectfont \makebox[4em][s]{經歷}\enspace:\enspace
+    \end{textblock}}
+\newpage
+%=----------------書背----------------------=%
+\pagestyle{empty}%設定沒有頁眉和頁腳
+\begin{center}
+\fontsize{0.001pt}{1pt}\selectfont .\\
+\vspace{4em}
+\fontsize{30pt}{30pt}\selectfont 【13】 \\
+\fontsize{20pt}{20pt}\selectfont
+\vspace{0.5em}
+分\\
+類\\
+編\\
+號\\
+\vspace{0.5em}
+\hspace{-0.5em}：\\
+\vspace{0.5em}
+\rotatebox[origin=cc]{270}{\sectionef\LARGE \textbf{112-4-APP-3004-1}}\\ %旋轉
+\vspace{0.5em}
+網\\
+際\\
+手\\
+足\\
+球\\
+場\\
+景\\
+設\\
+計\\
+\vspace{2em}
+一\\
+一\\
+二\\
+級\\
+
+\end{center}
+%\newpage
+%\begin{landscape}  %橫式環境
+%\begin{center}
+%\fontsize{0.001pt}{1pt}\selectfont .
+%\vspace{70mm}
+%\rotatebox[origin=cc]{90}{\LARGE 【14】}\rotatebox[origin=cc]%{180}{\LARGE 1-2-APP-8765} %旋轉
+%\end{center}
+%\end{landscape}
+\end{document}

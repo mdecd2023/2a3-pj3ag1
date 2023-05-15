@@ -1,0 +1,515 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cdtemplate</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>2a2-pj2ag2</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">2a2-pj2ag2</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='pj1.html'>pj1</a><ul class='dropdown'><li><a href='team10.html'>team10</a><li><a href='team12.html'>team12</a></li></ul><li class='has-children'><a href='pj2.html'>pj2</a><ul class='dropdown'><li><a href='41023114.html'>41023114</a><li><a href='41023119.html'>41023119</a><li><a href='41023126.html'>41023126</a><li><a href='41023138.html'>41023138</a></li></ul><li><a href='w10.html'>w10</a><li class='has-children'><a href='note.html'>note</a><ul class='dropdown'><li><a href='stud2.cycu.org.html'>stud2.cycu.org</a></li></ul><li><a href='progress.html'>progress</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">pj1 << <a href='pj1.html'>Previous</a> <a href='team12.html'>Next</a> >> team12<br /><h1>team10</h1>
+<p>editor:<span>41023119 呂承劼 41023138 林敬燐</span></p>
+<p>3/30 已完成場地及感測器</p>
+<p><img alt="" height="405" src="./../downloads/ag10/20230330.png" width="720"/></p>
+<p>4/14 完成記分板程式</p>
+<p><img alt="" height="405" src="./../downloads/ag10/20230414.png" width="720"/></p>
+<p>4/14 可進行計分</p>
+<p>觸碰到感測器球及機器人會重置到原本的位置</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/QrEx-9oWQ-c" title="YouTube video player" width="560"></iframe></p>
+<p>在錄影時記分板不會顯示出來-附上圖片</p>
+<p><img alt="" height="405" src="./../downloads/ag10/20230414-1.png" width="720"/></p>
+<p>當分數為5分時，會暫停模擬</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/fWbkG7gVaFw" title="YouTube video player" width="560"></iframe></p>
+<p>在製作感測器時求記得把 collidable、measurable、detectable 這三個選項打開</p>
+<p><img alt="" height="405" src="./../downloads/ag10/20230414-2.png" width="720"/></p>
+<p>另外要注意的是感測器 z軸的部分不能為0，否則感測器會直接偵測到地板導致程式暫停模擬</p>
+<p><span style="background-color: #00ffff;">記分板程式註解</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    score1 = 0 -- 初始化一個名為score1的變數，值為0
+    
+    sensor = sim.getObject('./sensor') -- 從模擬場景中獲取一個名為sensor的物體
+    
+    -- 創建一個UI，包括標題、計分標籤和當前分數值標籤，使用plastique風格
+    xml = [[
+        &lt;ui title="Scoreboard" closeable="false" resizable="false" style="plastique"&gt;
+        &lt;label text="Score:" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="10"/&gt;
+        &lt;label text="0" style="* {background-color: #FFF; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="30"/&gt;
+     
+        &lt;/ui&gt;
+    ]]
+    ui = simUI.create(xml) -- 創建UI
+    simUI.setPosition(ui, 0,0, true) -- 將UI定位在屏幕左上角
+    bubbleRob = sim.getObject('/bubbleRob') -- 從模擬場景中獲取名為bubbleRob的物體句柄
+    ball = sim.getObject('/ball') -- 從模擬場景中獲取名為ball的物體句柄
+    bubbleRob2 = sim.getObject('/bubbleRob2') -- 從模擬場景中獲取名為bubbleRob2的物體句柄
+    initialPosition = sim.getObjectPosition(bubbleRob, -1) -- 獲取bubbleRob物體的初始位置
+    initialOrientation = sim.getObjectOrientation(bubbleRob, -1) -- 獲取bubbleRob物體的初始方向
+    initialPosition2 = sim.getObjectPosition(bubbleRob2, -1) -- 獲取bubbleRob2物體的初始位置
+    initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1) -- 獲取bubbleRob2物體的初始方向
+    initialballPosition = sim.getObjectPosition(ball, -1) -- 獲取ball物體的初始位置
+    initialballOrientation = sim.getObjectOrientation(ball, -1) -- 獲取ball物體的初始方向
+
+end
+
+function sysCall_actuation()
+    --simUI.setLabelText(ui, 30, tostring(sim.getFloatSignal("myVariable")))
+
+    -- 讀取接近傳感器的距離值，將其存儲在result變數中
+    result=sim.readProximitySensor(sensor)
+
+    -- 如果分數小於5，則執行以下操作
+    if(score1&lt;5)then
+
+        -- 如果檢測到接近物體，則執行以下操作
+        if(result&gt;0)then
+            -- 將score1變數增加1
+            score2 = score1+1
+
+            -- 在UI中更新分數值標籤的文本為score2
+            simUI.setLabelText(ui, 30, tostring(score2))
+
+            -- 重置bubbleRob、bubbleRob2和ball物體的位置和方向
+            sim.setObjectPosition(bubbleRob, -1, initialPosition)
+            sim.setObjectOrientation(bubbleRob, -1, initialOrientation)
+            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
+            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
+            sim.setObjectPosition(ball, -1, initialballPosition)
+            sim.setObjectOrientation(ball, -1, initialballOrientation)
+
+            -- 將score1設置為score2
+            score1=score2
+        end
+    else
+        -- 如果分數達到5，則暫停模擬
+        sim.pauseSimulation()
+    end
+end</pre>
+<p><span style="background-color: #00ffff;">倒數計時器程式註解</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">-- 初始化函數，初始化得分(score1)為0和計時器(count)為3600
+function sysCall_init()
+    -- initialize the score to 0
+    score1 = 0 -- 初始化得分
+    count = 3600 -- 初始化計時器
+    -- 獲取接近傳感器對象並創建UI界面
+    sensor = sim.getObject('./sensor')
+    xml = [[
+            &lt;ui title="Scoreboard" closeable="false" resizable="false" style="plastique"&gt;
+              &lt;label text="60:00.0" style="* {background-color: #F00; color: #FFF; font-size: 32px; font-weight: bold; padding: 4px; border-radius: 4px;}" id="10"/&gt;
+              &lt;label text="Score:" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="20"/&gt;
+              &lt;label text="0" style="* {background-color: #FFF; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="30"/&gt;
+            &lt;/ui&gt;
+          ]]
+    ui = simUI.create(xml)
+    simUI.setPosition(ui, 0, 0, true)
+    -- 獲取對象及其初始位置/方向
+    bubbleRob = sim.getObject('/bubbleRob')
+    ball = sim.getObject('/ball')
+    initialPosition = sim.getObjectPosition(bubbleRob, -1)
+    initialOrientation = sim.getObjectOrientation(bubbleRob, -1)
+    initialballPosition = sim.getObjectPosition(ball, -1)
+    initialballOrientation = sim.getObjectOrientation(ball, -1)
+    
+end
+
+function sysCall_actuation() -- 讀取接近傳感器值
+    result=sim.readProximitySensor(sensor)
+    -- 檢查得分是否小於5
+    if(score1&lt;5)then
+        -- 檢查接近傳感器是否檢測到某物
+        if(result&gt;0)then
+            -- 增加得分並更新UI標籤
+            score2 = score1+1
+            simUI.setLabelText(ui, 30, tostring(score2))
+            -- 重置對象的位置和方向
+            sim.setObjectPosition(bubbleRob, -1, initialPosition)
+            sim.setObjectOrientation(bubbleRob, -1, initialOrientation)
+            sim.setObjectPosition(ball, -1, initialballPosition)
+            sim.setObjectOrientation(ball, -1, initialballOrientation)
+            -- 更新得分變量
+            score1=score2
+        end
+    end
+    if count &gt; 0 then -- 檢查計時器是否大於0
+          count = count - 1 -- 減少倒數時間
+          local minutes = math.floor(count / 60) -- 計算分鐘
+          local seconds = count % 60 -- 計算秒數
+          local timeStr = string.format("%d:%02d", minutes , seconds) -- 格式化時間字符串
+          simUI.setLabelText(ui, 10, timeStr) -- 更新時間UI標籤
+          simUI.setLabelText(ui, 30, tostring(score1)) -- 更新score的UI標籤
+    else
+        -- 如果時間到會暫停模擬
+        sim.pauseSimulation()
+    end
+end</pre>
+<p>可以將倒數計時器顯示出來，但計時器所減少的時間會比正常時間快好幾倍</p>
+<p><img alt="" height="405" src="./../downloads/ag10/20230414-3.png" width="720"/></p>
+<p>bubbleRob_football 檔案 : <a href="./../downloads/ag10/newbing_bubbleRob_football.ttt">bubbleRob_football_pj1ag10</a></p>
+<p>加入連線對戰 bubbleRob_football 檔案 : <a href="./../downloads/ag10/newbing_bubbleRob_football-2.ttt">bubbleRob_football-2_pj1ag10</a></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/N05LssWO1C8" title="YouTube video player" width="560"></iframe></p>
+<p><span style="background-color: #00ffff;">連線remoteAPI程式註解</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 引入必要的模块
+from zmqRemoteApi import RemoteAPIClient
+import keyboard
+import sim
+import time
+import simConst
+
+# 打印程式啟動的訊息
+print('Program started')
+
+# 關閉所有已開啟的連線
+sim.simxFinish(-1)
+
+# 連接到遠端 API 伺服器
+clientID = sim.simxStart('192.168.56.1', 19998, True, True, 5000, 5)
+
+# 啟動仿真
+sim.simxStartSimulation(clientID, sim.simx_opmode_oneshot_wait)
+
+# 判斷是否成功連線到伺服器
+if clientID != -1:
+    print('Connected to remote API server')
+else:
+    print('Failed connecting to remote API server')
+
+# 打印仿真開始的訊息
+print('Simulation started')
+
+# 取得左右輪子的控制句柄
+errorCode, leftMotor = sim.simxGetObjectHandle(clientID, 'leftMotor2', sim.simx_opmode_oneshot_wait)
+errorCode, rightMotor = sim.simxGetObjectHandle(clientID, 'rightMotor2', sim.simx_opmode_oneshot_wait)
+
+# 設定 BubbleRob 的速度
+def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):
+    # 取得左右輪子的控制句柄
+    errorCode, leftMotor = sim.simxGetObjectHandle(clientID, '/leftMotor2', sim.simx_opmode_oneshot_wait)
+    errorCode, rightMotor = sim.simxGetObjectHandle(clientID, '/rightMotor2',sim.simx_opmode_oneshot_wait)
+    # 設定左右輪子的目標速度
+    sim.simxSetJointTargetVelocity(clientID, leftMotor, leftWheelVelocity, simConst.simx_opmode_streaming)
+    sim.simxSetJointTargetVelocity(clientID, rightMotor, rightWheelVelocity, simConst.simx_opmode_streaming)
+
+# 循環檢測鍵盤事件
+while True:
+    if keyboard.is_pressed('up'):
+        # 按下"上"鍵，前進
+        setBubbleRobVelocity(2.0, 2.0)
+    elif keyboard.is_pressed('down'):
+        # 按下"下"鍵，後退
+        setBubbleRobVelocity(-2.0, -2.0)
+    elif keyboard.is_pressed('left'):
+        # 按下"左"鍵，左轉
+        setBubbleRobVelocity(-2.0, 2.0)
+    elif keyboard.is_pressed('right'):
+        # 按下"右"鍵，右轉
+        setBubbleRobVelocity(2.0, -2.0)
+    elif keyboard.is_pressed('q'):
+        # 按下"q"鍵，停止仿真
+        sim.stopSimulation()
+    else:
+        # 沒有按下任何鍵，停止移動
+        setBubbleRobVelocity(0.0, 0.0)</pre>
+<p>此程式必須放在圖片紅色框框檔案中</p>
+<p><img alt="" height="405" src="./../downloads/ag10/20230416.png" width="720"/></p>
+<p><span style="background-color: #00ffff;">啟動遠端API程式註解</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">-- The main script is not supposed to be modified, except in special cases.
+require('defaultMainScript')
+function sysCall_init()
+simRemoteApi.start(19998) -- 啟動遠程 API，監聽端口號為 19998
+end</pre>
+<p><span style="background-color: #00ffff;">連線 API sensor 程式註解</span><br/><br/></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">--在這個函數中初始化變數，設置UI元素，並獲取物體的初始位置和方向
+function sysCall_init()
+score1 = 0 --初始化分數變量
+count = 24000 --初始化計時器變量，代表比賽時間，這裡設置為24000，即400秒
+sensor = sim.getObject('./sensor') --獲取名為"sensor"的接近傳感器
+--創建UI元素，顯示分數和計時器
+xml2 = [[
+&lt;ui title="計分板" closeable="false" resizable="false" style="plastique"&gt;
+&lt;label text="分數：" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="20"/&gt;
+&lt;label text="0" style="* {background-color: #FFF; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="30"/&gt;
+&lt;/ui&gt;
+]]
+ui = simUI.create(xml2) --創建計分板UI
+simUI.setPosition(ui, 0,0, true) --設置UI位置
+xml3 = [[
+&lt;ui title="計時器" closeable="false" resizable="false" style="plastique"&gt;
+&lt;label text="400:00.0" style="* {background-color: #F00; color: #FFF; font-size: 32px; font-weight: bold; padding: 4px; border-radius: 4px;}" id="10"/&gt;
+&lt;/ui&gt;
+]]
+ui2 = simUI.create(xml3) --創建計時器UI
+simUI.setPosition(ui2, 900,0, true) --設置UI位置
+--獲取機器人和球的句柄，以及它們的初始位置和方向
+bubbleRob = sim.getObject('/bubbleRob')
+ball = sim.getObject('/ball')
+bubbleRob2 = sim.getObject('/bubbleRob2')
+initialPosition = sim.getObjectPosition(bubbleRob, -1)
+initialOrientation = sim.getObjectOrientation(bubbleRob, -1)
+initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)
+initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)
+initialballPosition = sim.getObjectPosition(ball, -1)
+initialballOrientation = sim.getObjectOrientation(ball, -1)
+end
+
+--在這個函數中實現比賽計時和計分邏輯
+function sysCall_actuation() -- 讀取接近傳感器值
+    result=sim.readProximitySensor(sensor)
+    -- 檢查得分是否小於5
+    if(score1&lt;5)then
+        -- 檢查接近傳感器是否檢測到某物
+        if(result&gt;0)then
+            -- 增加得分並更新UI標籤
+            score2 = score1+1
+            simUI.setLabelText(ui, 30, tostring(score2))
+            -- 重置對象的位置和方向
+            sim.setObjectPosition(bubbleRob, -1, initialPosition)
+            sim.setObjectOrientation(bubbleRob, -1, initialOrientation)
+            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
+            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
+            sim.setObjectPosition(ball, -1, initialballPosition)
+            sim.setObjectOrientation(ball, -1, initialballOrientation)
+            -- 更新得分變量
+            score1=score2
+        end
+    end
+    if count &gt; 0 then -- 檢查計時器是否大於0
+          count = count - 1 -- 減少倒數時間
+          local minutes = math.floor(count / 60) -- 計算分鐘
+          local seconds = count % 60 -- 計算秒數
+          local timeStr = string.format("%d:%02d", minutes , seconds) -- 格式化時間字符串
+          simUI.setLabelText(ui, 10, timeStr) -- 更新時間UI標籤
+          simUI.setLabelText(ui, 30, tostring(score1)) -- 更新score的UI標籤
+    else
+        -- 如果時間到會暫停模擬
+        sim.pauseSimulation()
+    end
+end</pre>
+<p><span style="background-color: #00ffff;">連線 API sensor2 程式註解</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+        score1 = 0 -- 初始分數為 0
+        sensor = sim.getObject('./sensor2')  -- 取得感測器物件
+        xml = [[
+             &lt;ui title="Scoreboard" closeable="false" resizable="false" style="plastique"&gt;
+             &lt;label text="Score:" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="40"/&gt;
+             &lt;label text="0" style="* {background-color: #FFF; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="50"/&gt;
+              &lt;/ui&gt;
+        ]]  -- 創建 UI 界面
+        ui = simUI.create(xml)  -- 顯示 UI 界面
+        simUI.setPosition(ui, 1770,0, true)  -- 設定 UI 界面的位置
+        bubbleRob = sim.getObject('/bubbleRob')  -- 取得 BubbleRob 物件
+        ball = sim.getObject('/ball')  -- 取得球物件
+        bubbleRob2 = sim.getObject('/bubbleRob2')  -- 取得第二個 BubbleRob 物件
+        initialPosition = sim.getObjectPosition(bubbleRob, -1)  -- 取得 BubbleRob 初始位置
+        initialOrientation = sim.getObjectOrientation(bubbleRob, -1)  -- 取得 BubbleRob 初始方向
+        initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)  -- 取得第二個 BubbleRob 初始位置
+        initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)  -- 取得第二個 BubbleRob 初始方向
+        initialballPosition = sim.getObjectPosition(ball, -1)  -- 取得球的初始位置
+        initialballOrientation = sim.getObjectOrientation(ball, -1)  -- 取得球的初始方向
+end
+
+function sysCall_actuation()
+     --simUI.setLabelText(ui, 30, tostring(sim.getFloatSignal("myVariable")))
+     result=sim.readProximitySensor(sensor) -- 讀取感測器的值
+     if(score1&lt;5)then -- 如果分數小於 5 分
+       if(result&gt;0)then -- 如果感測器的值大於 0
+        score2 = score1+1 -- 分數加 1
+        simUI.setLabelText(ui, 50, tostring(score2)) -- 更新分數顯示
+        sim.setObjectPosition(bubbleRob, -1, initialPosition)  -- 將 BubbleRob 重置到初始位置
+        sim.setObjectOrientation(bubbleRob, -1, initialOrientation)  -- 將 BubbleRob 重置到初始方向
+        sim.setObjectPosition(bubbleRob2, -1, initialPosition2)  -- 將第二個 BubbleRob 重置到初始位置
+        sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)  -- 將第二個 BubbleRob 重置到初始方向
+        sim.setObjectPosition(ball, -1, initialballPosition)  -- 將 Ball 重置到初始位置
+        sim.setObjectOrientation(ball, -1, initialballOrientation)  -- 將 Ball 重置到初始方向
+        -- 將score1設置為score2
+        score1=score2
+        end
+    else
+        -- 如果分數達到5，則暫停模擬
+        sim.pauseSimulation()
+    end
+end</pre>
+<p></p>
+<p>所有檔案壓縮檔：<a href="./../downloads/ag10/bubbleRob football 2a-pj1ag10.7z">bubbleRob football 2a-pj1ag10.7z</a></p><br />pj1 << <a href='pj1.html'>Previous</a> <a href='team12.html'>Next</a> >> team12</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

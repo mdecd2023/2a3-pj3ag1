@@ -1,0 +1,45 @@
+function sysCall_init()
+    score1 = 0
+    remaining_time = 60 -- 1 minute
+    sensor = sim.getObject('./sensor')
+    xml = [[        <ui title="Scoreboard" closeable="false" resizable="false" style="plastique">            <label text="Score:" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="10"/>            <label text="0" style="* {background-color: #1E90FF; color: #FFFFFF; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="30"/>            <label text="Time left: 60s" style="* {background-color: #808080; color: #000000; font-size: 20px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="40"/>        </ui>    ]]
+    ui = simUI.create(xml)
+    simUI.setPosition(ui, 0,0, true)
+    bubbleRob1 = sim.getObject('/bubbleRob1')
+    ball = sim.getObject('/ball')
+    bubbleRob2 = sim.getObject('/bubbleRob2')
+    initialPosition = sim.getObjectPosition(bubbleRob1, -1)
+    initialOrientation = sim.getObjectOrientation(bubbleRob1, -1)
+    initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)
+    initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)
+    initialballPosition = sim.getObjectPosition(ball, -1)
+    initialballOrientation = sim.getObjectOrientation(ball, -1)
+end
+
+function sysCall_actuation()
+    -- read the proximity sensor value
+    result=sim.readProximitySensor(sensor)
+    -- check if the remaining time is greater than 0
+    if(remaining_time > 0) then
+        -- check if the proximity sensor detects something
+        if(result>0) then
+            -- increase the score and update the UI label
+            score2 = score1+1
+            simUI.setLabelText(ui, 30, tostring(score2))
+            -- reset the objects' positions and orientations
+            sim.setObjectPosition(bubbleRob1, -1, initialPosition)
+            sim.setObjectOrientation(bubbleRob1, -1, initialOrientation)
+            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
+            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
+            sim.setObjectPosition(ball, -1, initialballPosition)
+            sim.setObjectOrientation(ball, -1, initialballOrientation)
+            -- update the score variable
+            score1=score2
+        end
+        -- update the remaining time and the UI label
+        remaining_time = remaining_time - sim.getSimulationTimeStep()
+        simUI.setLabelText(ui, 40, "Time left: "..math.floor(remaining_time).."s")
+    else
+        sim.stopSimulation()
+    end
+end

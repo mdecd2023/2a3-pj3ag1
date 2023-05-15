@@ -1,0 +1,390 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cdtemplate</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>2a2-pj2ag2</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">2a2-pj2ag2</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='pj1.html'>pj1</a><ul class='dropdown'><li><a href='team10.html'>team10</a><li><a href='team12.html'>team12</a></li></ul><li class='has-children'><a href='pj2.html'>pj2</a><ul class='dropdown'><li><a href='41023114.html'>41023114</a><li><a href='41023119.html'>41023119</a><li><a href='41023126.html'>41023126</a><li><a href='41023138.html'>41023138</a></li></ul><li><a href='w10.html'>w10</a><li class='has-children'><a href='note.html'>note</a><ul class='dropdown'><li><a href='stud2.cycu.org.html'>stud2.cycu.org</a></li></ul><li><a href='progress.html'>progress</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">team10 << <a href='team10.html'>Previous</a> <a href='pj2.html'>Next</a> >> pj2<br /><h1>team12</h1>
+<p>editor:<span>41023114 王樟皓、41023126 卓桓琮</span></p>
+<p><span><strong>Step1</strong>:建立足球場景，透過onshape繪出足球的場景，足球分成兩部分第一部分為足球的牆壁第二部分為球門。足球的牆壁:</span><a href="https://cad.onshape.com/documents/1ef9bb78edd5251adafdfbeb/w/0699139f42c9ebc4817c6156/e/20413e231639dd10dc11bb42?renderMode=0&amp;uiState=643a420fb4776c6d78624f23">wall</a><span> 球門:</span><a href="https://cad.onshape.com/documents/a377cc4e5b1ef7cab53572bc/w/239bf2d6c24d9f9c80b7a628/e/20ebee5effb2f8812f5d7e8a?renderMode=0&amp;uiState=643a427646ce454f67f78abb">door</a></p>
+<p><span><strong>Step2</strong>:轉成STL檔匯入coppaliasim場景中，放入先前製作的bobbleRob robot，並複製兩個在場景中，加入球體 過程:<a href="https://youtu.be/Rc-BSnYI17w">https://youtu.be/Rc-BSnYI17w</a></span></p>
+<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Rc-BSnYI17w" width="560"></iframe></span></p>
+<p><span><strong>Step3</strong>:設定coppliasim中的參數</span></p>
+<p><span>1.在兩個球門上加入感應sensor，以感測是否進球，將兩個seonsor拉到球門底下</span></p>
+<p><span><img alt="" height="313" src="./../images/pj1-note1.png" width="556"/></span></p>
+<p><span>2.設定ball的參數</span></p>
+<p>
+<script>
+var winkVideoData_41023126 = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+</p>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_41023126" height="630" muted="true" width="1008">
+<source src="./../downloads/ag12/pj1-ball.mp4" type="video/mp4"/></video></div>
+<p><span></span>3.bubbleRob robot 參數設定:<a href="https://mdecd2023.github.io/2a-pj1ag12/content/%E8%A3%BD%E4%BD%9C%E9%81%8E%E7%A8%8B.html">bubbleRob</a></p>
+<p><span><strong>Step4</strong>:加入sensor程式碼-利用chatgpt 寫出程式碼-計時器(記分板-參考至ag2)</span></p>
+<p><span>文字檔:<a href="./../downloads/ag12/sensor-program.txt">sensor-program</a></span></p>
+<p><span><img alt="" height="393" src="./../images/pj1-note4.png" width="469"/></span></p>
+<p><span><img alt="" height="450" src="./../images/pj1-note5.png" width="482"/></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    score1 = 0
+    remaining_time = 60 -- 1 minute
+    sensor = sim.getObject('./sensor')
+    xml = [[        <ui closeable="false" resizable="false" title="Scoreboard">            <label id="10" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;" text="Score:"></label>            <label id="30" style="* {background-color: #1E90FF; color: #ffffff; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;" text="0"></label>            <label id="40" style="* {background-color: #808080; color: #000000; font-size: 20px; font-weight: bold; padding: 5px; border-radius: 5px;" text="Time left: 60s"></label>        </ui>    ]]
+    ui = simUI.create(xml)
+    simUI.setPosition(ui, 0,0, true)
+    bubbleRob1 = sim.getObject('/bubbleRob1')
+    ball = sim.getObject('/ball')
+    bubbleRob2 = sim.getObject('/bubbleRob2')
+    initialPosition = sim.getObjectPosition(bubbleRob1, -1)
+    initialOrientation = sim.getObjectOrientation(bubbleRob1, -1)
+    initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)
+    initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)
+    initialballPosition = sim.getObjectPosition(ball, -1)
+    initialballOrientation = sim.getObjectOrientation(ball, -1)
+end
+
+function sysCall_actuation()
+    -- read the proximity sensor value
+    result=sim.readProximitySensor(sensor)
+    -- check if the remaining time is greater than 0
+    if(remaining_time &gt; 0) then
+        -- check if the proximity sensor detects something
+        if(result&gt;0) then
+            -- increase the score and update the UI label
+            score2 = score1+1
+            simUI.setLabelText(ui, 30, tostring(score2))
+            -- reset the objects' positions and orientations
+            sim.setObjectPosition(bubbleRob1, -1, initialPosition)
+            sim.setObjectOrientation(bubbleRob1, -1, initialOrientation)
+            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
+            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
+            sim.setObjectPosition(ball, -1, initialballPosition)
+            sim.setObjectOrientation(ball, -1, initialballOrientation)
+            -- update the score variable
+            score1=score2
+        end
+        -- update the remaining time and the UI label
+        remaining_time = remaining_time - sim.getSimulationTimeStep()
+        simUI.setLabelText(ui, 40, "Time left: "..math.floor(remaining_time).."s")
+    else
+        sim.stopSimulation()
+    end
+end</pre>
+<p><span><strong>第二版 sersor 程式碼 </strong></span></p>
+<p>文字檔:<a href="./../downloads/ag12/sensor-program2.txt">sensor-program2</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    score1 = 0
+    remaining_time = 1200 -- 20 minute
+    sensor = sim.getObject('./sensor1')
+    xml = [[        <ui closeable="false" resizable="false" title="Scoreboard">            <label id="10" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;" text="Score:"></label>            <label id="30" style="* {background-color: #1E90FF; color: #ffffff; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;" text="0"></label>            <label id="40" style="* {background-color: #d91111; color: #000000; font-size: 20px; font-weight: bold; padding: 5px; border-radius: 5px;" text="Time left: 60s"></label>        </ui>    ]]
+    ui = simUI.create(xml)
+    simUI.setPosition(ui, 0,0, true)
+    bubbleRob1 = sim.getObject('/bubbleRob1')
+    ball = sim.getObject('/ball')
+    bubbleRob2 = sim.getObject('/bubbleRob2')
+    initialPosition = sim.getObjectPosition(bubbleRob1, -1)
+    initialOrientation = sim.getObjectOrientation(bubbleRob1, -1)
+    initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)
+    initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)
+    initialballPosition = sim.getObjectPosition(ball, -1)
+    initialballOrientation = sim.getObjectOrientation(ball, -1)
+end
+
+function sysCall_actuation()
+    -- read the proximity sensor value
+    result=sim.readProximitySensor(sensor)
+    -- check if the remaining time is greater than 0
+    if(remaining_time &gt; 0) then
+        -- check if the proximity sensor detects something
+        if(result&gt;0) then
+            -- increase the score and update the UI label
+            score2 = score1+1
+            simUI.setLabelText(ui, 30, tostring(score2))
+            -- reset the objects' positions and orientations
+            sim.setObjectPosition(bubbleRob1, -1, initialPosition)
+            sim.setObjectOrientation(bubbleRob1, -1, initialOrientation)
+            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
+            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
+            sim.setObjectPosition(ball, -1, initialballPosition)
+            sim.setObjectOrientation(ball, -1, initialballOrientation)
+            -- update the score variable
+            score1=score2
+        end
+        -- update the remaining time and the UI label
+        remaining_time = remaining_time - sim.getSimulationTimeStep()
+        simUI.setLabelText(ui, 40, "Time left: "..math.floor(remaining_time).."s")
+    else
+        sim.stopSimulation()
+    end
+end</pre>
+<p><span><strong></strong></span></p>
+<p><span><strong>Step5</strong>:打開小白窗 加入程式碼 按go</span></p>
+<p><span>文字檔:<a href="./../downloads/ag12/senser1-whiteboard-program.txt">whitewindow</a></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor
+from zmqRemoteApi import RemoteAPIClient
+import keyboard
+
+client = RemoteAPIClient('localhost', 23000)
+
+print('Program started')
+sim = client.getObject('sim')
+sim.startSimulation()
+print('Simulation started')
+
+def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):
+    leftMotor = sim.getObject('/leftMotor')
+    rightMotor = sim.getObject('/rightMotor')
+    sim.setJointTargetVelocity(leftMotor, leftWheelVelocity)
+    sim.setJointTargetVelocity(rightMotor, rightWheelVelocity)
+
+'''
+# Example usage 1:
+setBubbleRobVelocity(1.0, 1.0)
+time.sleep(2)
+setBubbleRobVelocity(0.0, 0.0)
+'''
+# use keyborad to move BubbleRob
+
+while True:
+    if keyboard.is_pressed('up'):
+        setBubbleRobVelocity(1.0, 1.0)
+    elif keyboard.is_pressed('down'):
+        setBubbleRobVelocity(-1.0, -1.0)
+    elif keyboard.is_pressed('left'):
+        setBubbleRobVelocity(-1.0, 1.0)
+    elif keyboard.is_pressed('right'):
+        setBubbleRobVelocity(1.0, -1.0)
+    elif keyboard.is_pressed('q'):
+        # stop simulation
+        sim.stopSimulation()
+    else:
+        setBubbleRobVelocity(0.0, 0.0)</pre>
+<p><strong>在football的場景加入計時器和記分板 過程:<a href="https://youtu.be/EZ_mE9P4j-s">https://youtu.be/EZ_mE9P4j-s</a></strong></p>
+<p><strong>第一版</strong></p>
+<p><strong></strong></p>
+<p><img alt="" height="283" src="./../images/pj1-note3.png" width="505"/></p>
+<p></p>
+<p><img alt="" height="267" src="./../images/pj1-note2.png" width="508"/></p>
+<p></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Dnn487BBg2E" width="560"></iframe></p>
+<p><strong></strong></p>
+<p><strong>第二版</strong></p>
+<p><strong></strong></p>
+<p><strong><img alt="" height="444" src="./../images/pj1-note11.png" width="790"/></strong></p>
+<p></p>
+<p><img alt="" height="426" src="./../images/pj1-note10.png" width="757"/></p>
+<p></p>
+<p><strong></strong></p>
+<p><strong><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Js30bBYL3Wk" width="560"></iframe><br/></strong></p>
+<p><strong></strong></p>
+<p><strong>Step6</strong>:連線對戰</p>
+<p>1.查詢ipconfig 找到ipv4埠號 </p>
+<p><img alt="" height="343" src="./../images/pj1-note6.png" width="544"/></p>
+<p>2.將自己ipv4埠號複製到小白窗的程式中</p>
+<p><img alt="" height="404" src="./../images/pj1-note7.png" width="338"/></p>
+<p><img alt="" height="344" src="./../images/pj1-note8.png" width="272"/></p>
+<p>3.開始兩人對戰</p>
+<p><img alt="" height="252" src="./../images/pj1-note9.png" width="448"/></p>
+<p></p>
+<p>Final:連線對打未完成 都有設定 防火牆也有關 但是對方就連不到</p>
+<p>連線失敗過程:</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/hoakN4USk7A" width="560"></iframe></p>
+<p></p>
+<p>football.ttt檔:<a href="./../downloads/ag12/pj1-football.ttt">pj1-football</a></p>
+<p></p>
+<br />team10 << <a href='team10.html'>Previous</a> <a href='pj2.html'>Next</a> >> pj2</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

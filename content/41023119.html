@@ -1,0 +1,356 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cdtemplate</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>2a2-pj2ag2</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">2a2-pj2ag2</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='pj1.html'>pj1</a><ul class='dropdown'><li><a href='team10.html'>team10</a><li><a href='team12.html'>team12</a></li></ul><li class='has-children'><a href='pj2.html'>pj2</a><ul class='dropdown'><li><a href='41023114.html'>41023114</a><li><a href='41023119.html'>41023119</a><li><a href='41023126.html'>41023126</a><li><a href='41023138.html'>41023138</a></li></ul><li><a href='w10.html'>w10</a><li class='has-children'><a href='note.html'>note</a><ul class='dropdown'><li><a href='stud2.cycu.org.html'>stud2.cycu.org</a></li></ul><li><a href='progress.html'>progress</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">41023114 << <a href='41023114.html'>Previous</a> <a href='41023126.html'>Next</a> >> 41023126<br /><h1>41023119</h1>
+<p>pj2 製作內容</p>
+<p>4人操控 bubbleRob 利用 remote API server 錄製的影片</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/8Nqbb7NHTvE" title="YouTube video player" width="560"></iframe></p>
+<p><span style="background-color: #00ffff;">remote API 程式</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor
+from zmqRemoteApi import RemoteAPIClient
+import keyboard
+import sim
+import time
+import simConst
+
+print('Program started')
+sim.simxFinish(-1) # just in case, close all openㄋed connections
+clientID=sim.simxStart('192.168.1.35',19997,True,True,5000,5)
+sim.simxStartSimulation(clientID, sim.simx_opmode_oneshot_wait)
+
+if clientID!=-1:
+    print('Connected to remote API server')
+else:
+    print('Failed connecting to remote API server')
+
+print('Simulation started')
+
+errorCode, leftMotor = sim.simxGetObjectHandle(clientID, 'leftMotor', sim.simx_opmode_oneshot_wait)
+errorCode, rightMotor = sim.simxGetObjectHandle(clientID, 'rightMotor', sim.simx_opmode_oneshot_wait)
+
+def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):
+    errorCode, leftMotor = sim.simxGetObjectHandle(clientID, '/leftMotor', sim.simx_opmode_oneshot_wait)
+    errorCode, rightMotor = sim.simxGetObjectHandle(clientID, '/rightMotor',sim.simx_opmode_oneshot_wait)
+    sim.simxSetJointTargetVelocity(clientID, leftMotor, leftWheelVelocity, simConst.simx_opmode_streaming)
+    sim.simxSetJointTargetVelocity(clientID, rightMotor, rightWheelVelocity, simConst.simx_opmode_streaming)
+
+'''
+# Example usage 1:
+setBubbleRobVelocity(1.0, 1.0)
+time.sleep(2)
+setBubbleRobVelocity(0.0, 0.0)
+'''
+# use keyborad to move BubbleRob
+
+while True:
+    if keyboard.is_pressed('w'):
+        setBubbleRobVelocity(2.0, 2.0)
+    elif keyboard.is_pressed('s'):
+        setBubbleRobVelocity(-2.0, -2.0)
+    elif keyboard.is_pressed('a'):
+        setBubbleRobVelocity(-2.0, 2.0)
+    elif keyboard.is_pressed('d'):
+        setBubbleRobVelocity(2.0, -2.0)
+    elif keyboard.is_pressed('q'):
+        # stop simulation
+        sim.stopSimulation()
+    else:
+        setBubbleRobVelocity(0.0, 0.0)</pre>
+<p><span style="background-color: #00ffff;"><span style="background-color: #ffffff;"></span></span></p>
+<p><span style="background-color: #00ffff;"><span style="background-color: #ffffff;">控制 remote API 檔案：<a href="./../downloads/bubbleRob_zmq_green_red_example.7z">bubbleRob_zmq_green_red_example.7z</a></span></span></p>
+<p><span style="background-color: #00ffff;"><span style="background-color: #ffffff;"><span>遇到問題：一開始本組是利用三台教室電腦及一台筆電，開始模擬時唯獨筆電無法操控 bubbleRob，後來發現網路必需都要連至同一個 Wi-Fi 才能 zmqRemoteAPI 的操控。</span></span></span></p>
+<p>w10製作內容</p>
+<div><span style="background-color: #00ff00;">更改及融入課程後的答案 由41023119 呂承劼製作<br/></span></div>
+<div><span style="background-color: #00ffff;">1.What is zmqRemoteAPI, and how does it relate to CoppeliaSim?</span></div>
+<div></div>
+<div>answer：zmqRemoteAPI 是應用程序可以連接CoppeliaSim的幾種方式之一。<br/><br/>zmqRemoteAPI 允許從外部應用程序或遠程硬件（例如實際機器人、遠程計算機等）控制模擬（或模擬器本身）。它提供了所有API功能，這些功能也可以通過CoppeliaSim腳本使用：這包括所有常規API功能（即sim.-type函數），還包括所有API功能由插件提供（例如simOMPL。，simUI。*，simIK。*等），如果啟用的狀況下。<br/><br/>zmqRemoteAPI 函數通過 ZeroMQ 及其與 CoppeliaSim 和 zmqRemoteAPI 附加組件的接口插件與CoppeliaSim 進行交互。所有這些都是對用戶隱藏的。遠程API可以讓一個或多個外部應用程序以步進方式（即與每個模擬步驟同步）或非步進方式（即正常操作模式）與CoppeliaSim交互，甚至支持遠程控制模擬器（例如，遠程加載場景，開始、暫停或停止模擬）。<br/><br/>請參閱programming/zmqRemoteApi文件夾或其相關存儲庫以獲取示例。</div>
+<div>參考：<a href="https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm">https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm</a></div>
+<div></div>
+<div><span style="background-color: #00ffff;">2.How do you establish a connection between a Python script and CoppeliaSim using zmqRemoteAPI?</span></div>
+<div><span style="background-color: #00ffff;"></span></div>
+<div>answer：必須先導入 ZeroMQ 和 CBOR</div>
+<div>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">$ /path/to/python -m pip install pyzmq
+$ /path/to/python -m pip install cbor</pre>
+<p>將 Python 遠端 API 項目的位置添加到 Python 的 sys.path 或 PYTHONPATH 環境變量中也會很有幫助。</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">$ export PYTHONPATH=/path/to/zmqRemoteApi/clients/python</pre>
+<p>以下是一個非常簡單的 ZeroMQ 遠端 API 客戶端代碼示例，它會啟動模擬器並運行一個 3 秒的步進模擬：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import time
+from zmqRemoteApi import RemoteAPIClient
+
+client = RemoteAPIClient()
+sim = client.getObject('sim')
+
+client.setStepping(True)
+
+sim.startSimulation()
+while (t := sim.getSimulationTime()) &lt; 3:
+    s = f'Simulation time: {t:.2f} [s]'
+    print(s)
+    client.step()
+sim.stopSimulation()</pre>
+<p>參考：<a href="https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm">https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm</a><br/><br/></p>
+</div>
+<div><span style="background-color: #00ffff;">3.What are some common use cases for zmqRemoteAPI in CoppeliaSim?</span></div>
+<div><span style="background-color: #00ffff;"></span></div>
+<div>answer：以下是從 CoppeliaSim 資料夾所提供的示範程式<span style="background-color: #00ffff;"></span></div>
+<div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Make sure to have the server side running in CoppeliaSim:
+# in a child script of a CoppeliaSim scene, add following command
+# to be executed just once, at simulation start:
+#
+# simRemoteApi.start(19999)
+#
+# then start simulation, and run this program.
+#
+# IMPORTANT: for each successful call to simxStart, there
+# should be a corresponding call to simxFinish at the end!
+
+try:
+    import sim
+except:
+    print ('--------------------------------------------------------------')
+    print ('"sim.py" could not be imported. This means very probably that')
+    print ('either "sim.py" or the remoteApi library could not be found.')
+    print ('Make sure both are in the same folder as this file,')
+    print ('or appropriately adjust the file "sim.py"')
+    print ('--------------------------------------------------------------')
+    print ('')
+
+import time
+
+print ('Program started')
+sim.simxFinish(-1) # just in case, close all opened connections
+clientID=sim.simxStart('192.168.56.1',19997,True,True,5000,5) # Connect to CoppeliaSim
+if clientID!=-1:
+    print ('Connected to remote API server')
+
+    # Now try to retrieve data in a blocking fashion (i.e. a service call):
+    res,objs=sim.simxGetObjects(clientID,sim.sim_handle_all,sim.simx_opmode_blocking)
+    if res==sim.simx_return_ok:
+        print ('Number of objects in the scene: ',len(objs))
+    else:
+        print ('Remote API function call returned with error code: ',res)
+
+    time.sleep(2)
+
+    # Now retrieve streaming data (i.e. in a non-blocking fashion):
+    startTime=time.time()
+    sim.simxGetIntegerParameter(clientID,sim.sim_intparam_mouse_x,sim.simx_opmode_streaming) # Initialize streaming
+    while time.time()-startTime &lt; 1:
+        returnCode,data=sim.simxGetIntegerParameter(clientID,sim.sim_intparam_mouse_x,sim.simx_opmode_buffer) # Try to retrieve the streamed data
+        if returnCode==sim.simx_return_ok: # After initialization of streaming, it will take a few ms before the first value arrives, so check the return code
+            print ('Mouse position x: ',data) # Mouse position x is actualized when the cursor is over CoppeliaSim's window
+        time.sleep(0.005)
+
+    # Now send some data to CoppeliaSim in a non-blocking fashion:
+    sim.simxAddStatusbarMessage(clientID,'這個 Python remote API 將會連續執行 1 秒鐘, 歡迎進入 CoppeliaSim 的虛擬世界!',sim.simx_opmode_oneshot)
+
+    # Before closing the connection to CoppeliaSim, make sure that the last command sent out had time to arrive. You can guarantee this with (for example):
+    sim.simxGetPingTime(clientID)
+
+    # Now close the connection to CoppeliaSim:
+    sim.simxFinish(clientID)
+else:
+    print ('Failed connecting to remote API server')
+print ('Program ended')</pre>
+</div>
+<div><span style="background-color: #00ffff;">4.What are the advantages and disadvantages of using zmqRemoteAPI compared to other methods of communication between Python and CoppeliaSim?</span></div>
+<div><br/>answer：使用zmqRemoteAPI相比其他Python與CoppeliaSim之間的通訊方法，優點是可以讓使用者從外部應用程式或遠端硬體（如真實機器人、遠程電腦等）控制模擬（或模擬器本身），並提供了所有API函數，包括常規API函數和由插件提供的API函數（例如simOMPL、simUI、simIK等）。此外，使用zmqRemoteAPI可以讓一個或多個外部應用程式以同步或非同步方式與CoppeliaSim互動，甚至支持遠程控制模擬器。<br/><br/>缺點是使用zmqRemoteAPI需要較高的程式設計知識，而且需要較多的設置和配置才能建立連接。同時，使用zmqRemoteAPI也可能會對CoppeliaSim的效能產生一定的影響，因此在實現具體項目時需要仔細考慮使用zmqRemoteAPI是否適合。</div>
+<div></div>
+<div>以下是 Coppelia Robotics forums 中使用者在網站上提出的問題：<a href="https://forum.coppeliarobotics.com/viewtopic.php?t=9809">https://forum.coppeliarobotics.com/viewtopic.php?t=9809</a></div>
+<div></div>
+<div><span style="background-color: #00ffff;">5.Can you give an example of a project or task that you could complete using zmqRemoteAPI in CoppeliaSim?</span></div>
+<div></div>
+<div>answer：以下是在課程上利用 zmqRemoteAPI 在 CoppeliaSim 中完成四人連線控制機器人之影片</div>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/8Nqbb7NHTvE" title="YouTube video player" width="560"></iframe></p><br />41023114 << <a href='41023114.html'>Previous</a> <a href='41023126.html'>Next</a> >> 41023126</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

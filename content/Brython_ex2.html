@@ -1,0 +1,380 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cdtemplate</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>2a2-pj2ag2</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">2a2-pj2ag2</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='pj1.html'>pj1</a><ul class='dropdown'><li><a href='team10.html'>team10</a><li><a href='team12.html'>team12</a></li></ul><li class='has-children'><a href='pj2.html'>pj2</a><ul class='dropdown'><li><a href='41023114.html'>41023114</a><li><a href='41023119.html'>41023119</a><li><a href='41023126.html'>41023126</a><li><a href='41023138.html'>41023138</a></li></ul><li><a href='w10.html'>w10</a><li class='has-children'><a href='note.html'>note</a><ul class='dropdown'><li><a href='stud2.cycu.org.html'>stud2.cycu.org</a></li></ul><li><a href='progress.html'>progress</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Brython << <a href='Brython.html'>Previous</a> <br /><h1>Brython_ex2</h1>
+<p>This code uses the Euler method to approximate the solution to the ODE dy/dx = x - y with an initial condition of y0 = 1.0. The solution is calculated for a range of x values from 0 to 5.</p>
+<p id="brython_div"></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/']});
+}
+</script>
+</pre>
+<p>Solve ODE:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document
+
+def dy_dx(y, x):
+    return x - y
+
+x_start = 0
+x_end = 5
+n_points = 100
+x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
+y0 = 1.0
+h = x[1] - x[0]
+y = [y0]
+for i in range(1, len(x)):
+    y.append(y[-1] + h * dy_dx(y[-1], x[i-1]))
+
+# Create a new paragraph element and set its text content to the solution
+p = document.createElement('p')
+p.textContent = f"The solution to the ODE is: {y}"
+
+# Append the paragraph element to the body of the webpage
+document.body.appendChild(p)</pre>
+<p></p>
+<p>
+<script type="text/python3">
+from browser import document, window
+
+def dy_dx(y, x):
+    return x - y
+
+x_start = 0
+x_end = 5
+n_points = 100
+x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
+y0 = 1.0
+h = x[1] - x[0]
+y = [y0]
+for i in range(1, len(x)):
+    y.append(y[-1] + h * dy_dx(y[-1], x[i-1]))
+
+# Create a new div element to hold the plot
+#plot_div = document.createElement('div')
+#plot_div.id = 'plot'
+#document.body.appendChild(plot_div)
+plot_div = document["brython_div"]
+
+# Plot the solution using plotly.js
+data = [{'x': x, 'y': y}]
+window.Plotly.newPlot('brython_div', data)
+</script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</p>
+<p>Brython environment and <a href="https://plotly.com/javascript/">Plotly.js</a>:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;script&gt;// &lt;![CDATA[
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/']});
+}
+// ]]&gt;&lt;/script&gt;
+&lt;p id="brython_div"&gt;&lt;/p&gt;</pre>
+<p>Brython programe with Plotly.js:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, window
+
+def dy_dx(y, x):
+    return x - y
+
+x_start = 0
+x_end = 5
+n_points = 100
+x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
+y0 = 1.0
+h = x[1] - x[0]
+y = [y0]
+for i in range(1, len(x)):
+    y.append(y[-1] + h * dy_dx(y[-1], x[i-1]))
+
+# Create a new div element to hold the plot
+#plot_div = document.createElement('div')
+#plot_div.id = 'plot'
+#document.body.appendChild(plot_div)
+plot_div = document["brython_div"]
+
+# Plot the solution using plotly.js
+data = [{'x': x, 'y': y}]
+window.Plotly.newPlot('brython_div', data)</pre>
+<p>This code defines a function dy_dx that represents the mass-spring-damper ordinary differential equation. The Euler method is used to solve this equation for a range of x values from 0 to 20 with initial conditions of y0 = [1.0, 0.0]. The solution is then plotted on the webpage using <a href="https://plotly.com/javascript/">plotly.js</a>.</p>
+<p id="mass-spring-damper"></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
+<script type="text/python3">
+from browser import document, window
+
+m = 1.0  # mass
+k = 1.0  # spring constant
+c = 0.1  # damping coefficient
+
+def dy_dx(y, x):
+    y1, y2 = y
+    return [y2, -(k/m)*y1 - (c/m)*y2]
+
+x_start = 0
+x_end = 20
+n_points = 1000
+x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
+y0 = [1.0, 0.0]
+h = x[1] - x[0]
+y = [y0]
+for i in range(1, len(x)):
+    y_new = [y[-1][j] + h * dy_dx(y[-1], x[i-1])[j] for j in range(2)]
+    y.append(y_new)
+
+# Create a new div element to hold the plot
+'''
+plot_div = document.createElement('div')
+plot_div.id = 'plot'
+document.body.appendChild(plot_div)
+'''
+
+# Plot the solution using plotly.js
+data = [{'x': x, 'y': [y[i][0] for i in range(len(y))]}]
+layout = {'title': 'Mass-Spring-Damper System', 'xaxis': {'title': 'Time'}, 'yaxis': {'title': 'Displacement'}}
+window.Plotly.newPlot('mass-spring-damper', data, layout)
+</script>
+</pre>
+<p>This code defines a function dy_dx that represents the mass-spring-damper system with a PID controller. The gains of the PID controller are set to Kp = 10.0, Ki = 1.0, and Kd = 0.5. The Euler method is used to solve this system of equations for a range of x values from 0 to 20 with initial conditions of y0 = [0.0, 0.0, 0.0, 0.0]. The response of the system is then plotted on the webpage using <a href="https://plotly.com/javascript/">plotly.js</a>.</p>
+<p id="pid-control"></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
+<script type="text/python3">
+from browser import document, window
+
+m = 1.0  # mass
+k = 1.0  # spring constant
+c = 0.1  # damping coefficient
+
+Kp = 10.0  # proportional gain
+Ki = 1.0   # integral gain
+Kd = 0.5   # derivative gain
+
+def dy_dx(y, x):
+    y1, y2, e_int, e_prev = y
+    e = 1 - y1
+    de_dt = -y2
+    u = Kp * e + Ki * e_int + Kd * de_dt
+    return [y2, (u - k*y1 - c*y2)/m, e, e]
+
+x_start = 0
+x_end = 20
+n_points = 1000
+x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
+y0 = [0.0, 0.0, 0.0, 0.0]
+h = x[1] - x[0]
+y = [y0]
+for i in range(1, len(x)):
+    y_new = [y[-1][j] + h * dy_dx(y[-1], x[i-1])[j] for j in range(4)]
+    y.append(y_new)
+
+'''
+# Create a new div element to hold the plot
+plot_div = document.createElement('div')
+plot_div.id = 'plot'
+document.body.appendChild(plot_div)
+'''
+
+# Plot the solution using plotly.js
+data = [{'x': x, 'y': [y[i][0] for i in range(len(y))], 'name': 'Output'},
+        {'x': x, 'y': [1 for _ in range(len(y))], 'name': 'Setpoint'}]
+layout = {'title': 'Mass-Spring-Damper System with PID Control', 'xaxis': {'title': 'Time'}, 'yaxis': {'title': 'Displacement'}}
+window.Plotly.newPlot('pid-control', data, layout)
+</script>
+</pre>
+<p height="480" id="container" width="640"></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" type="text/javascript"></script>
+<script type="text/python"></script>
+</pre><br />Brython << <a href='Brython.html'>Previous</a> </div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
