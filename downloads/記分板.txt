@@ -1,0 +1,85 @@
+function sysCall_init()
+    score1 = 0
+    score3 = 0
+    s0={1,1,1,0,1,1,1}
+    s1={0,0,1,0,0,1,0}
+    s2={1,0,1,1,1,0,1}
+    s3={1,0,1,1,0,1,1}
+    s4={0,1,1,1,0,1,0}
+    s5={1,1,0,1,0,1,1}
+    s6={1,1,0,1,1,1,1}
+    s7={1,0,1,0,0,1,0}
+    s8={1,1,1,1,1,1,1}
+    s9={1,1,1,1,0,1,1}
+    s={s0,s1,s2,s3,s4,s5,s6,s7,s8,s9}
+    c = sim.getObject('./c')
+    sim.setShapeColor(c, nil, sim.colorcomponent_ambient_diffuse, {1, 0, 0})
+    for j = 0,6,1 do
+        local a = sim.getObject('./a['..j..']')
+            if (s[1][j+1]==1) then
+                sim.setShapeColor(a, nil, sim.colorcomponent_ambient_diffuse, {1, 0, 0})
+            else
+                sim.setShapeColor(a, nil, sim.colorcomponent_ambient_diffuse, {1, 1, 1})
+            end
+    end
+    for j = 0,6,1 do
+        local b = sim.getObject('./b['..j..']')
+            if (s[1][j+1]==1) then
+                sim.setShapeColor(b, nil, sim.colorcomponent_ambient_diffuse, {1, 0, 0})
+            else
+                sim.setShapeColor(b, nil, sim.colorcomponent_ambient_diffuse, {1, 1, 1})
+            end
+    end
+    sensor = sim.getObject('./sensor')
+end
+
+
+function sysCall_actuation()
+    --local objectHandle = sim.getObject('/Sphere')
+    result=sim.readProximitySensor(sensor)
+    if(score1<9)then
+        if(result>0)then
+            score2 = score1+1
+            --sim.removeObject(objectHandle)
+            local ball = sim.getObject('/ball')
+            sim.setObjectSpecialProperty(ball, sim.modelproperty_not_detectable)
+            for i=0 ,9,1 do
+                if (score2==i)then
+                    for j = 0,6,1 do
+                        local b = sim.getObject('./b['..j..']')
+                        if (s[i+1][j+1]==1) then
+                            sim.setShapeColor(b, nil, sim.colorcomponent_ambient_diffuse, {1, 0, 0})
+                        else
+                            sim.setShapeColor(b, nil, sim.colorcomponent_ambient_diffuse, {1, 1, 1})
+                            
+                        end
+                  
+                    end
+                end
+            end
+            --sim.pauseSimulation()
+            score1=score2
+        end
+    elseif(score3<9)then
+        score1=0
+        
+        score4=score3+1
+        for i=0 ,9,1 do
+            if (score4==i)then
+                for j = 0,6,1 do
+                    local a = sim.getObject('./a['..j..']')
+                    if (s[i+1][j+1]==1) then
+                        sim.setShapeColor(a, nil, sim.colorcomponent_ambient_diffuse, {1, 0, 0})
+                    else
+                        sim.setShapeColor(a, nil, sim.colorcomponent_ambient_diffuse, {1, 1, 1})
+                    end
+                end
+            end
+        end
+        score3=score4
+     
+        
+    else
+        sim.pauseSimulation()
+    end
+end

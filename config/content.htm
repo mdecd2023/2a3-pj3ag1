@@ -1,526 +1,9 @@
 <h1>About</h1>
 <p>組長：41023119 呂承劼</p>
-<p>組員：41023114 王樟皓、41023126 卓桓琮、41023138 林敬燐</p>
-<p>倉儲 :<span> </span><a href="https://github.com/mdecd2023/2a2-pj2ag2">https://github.com/mdecd2023/2a2-pj1ag2</a></p>
-<p>網站 : <a href="https://mdecd2023.github.io/2a2-pj2ag2/content/index.html">https://mdecd2023.github.io/2a2-pj2ag2/content/index.html</a></p>
+<p>組員：41023114 王樟皓 41023126 卓桓琮 41023138 林敬燐 41023120 呂昕叡 41023118 吳政憲 41023124 李茂廷</p>
+<p>倉儲 :<span> </span>h<a href="https://github.com/mdecd2023/2a3-pj3ag1">ttps://github.com/mdecd2023/2a3-pj3ag1</a></p>
+<p>網站 :<a href="https://mdecd2023.github.io/2a3-pj3ag1/content/index.html">https://mdecd2023.github.io/2a3-pj3ag1/content/index.html</a></p>
 <p><a href="https://mde.tw/pjcopsim">https://mde.tw/pjcopsim</a></p>
-<h1>pj1</h1>
-<p>w1-w9 pj1ag 各組製作之足球場景</p><h2>team10</h2>
-<p>editor:<span>41023119 呂承劼 41023138 林敬燐</span></p>
-<p>3/30 已完成場地及感測器</p>
-<p><img alt="" height="405" src="/downloads/ag10/20230330.png" width="720"/></p>
-<p>4/14 完成記分板程式</p>
-<p><img alt="" height="405" src="/downloads/ag10/20230414.png" width="720"/></p>
-<p>4/14 可進行計分</p>
-<p>觸碰到感測器球及機器人會重置到原本的位置</p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/QrEx-9oWQ-c" title="YouTube video player" width="560"></iframe></p>
-<p>在錄影時記分板不會顯示出來-附上圖片</p>
-<p><img alt="" height="405" src="/downloads/ag10/20230414-1.png" width="720"/></p>
-<p>當分數為5分時，會暫停模擬</p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/fWbkG7gVaFw" title="YouTube video player" width="560"></iframe></p>
-<p>在製作感測器時求記得把 collidable、measurable、detectable 這三個選項打開</p>
-<p><img alt="" height="405" src="/downloads/ag10/20230414-2.png" width="720"/></p>
-<p>另外要注意的是感測器 z軸的部分不能為0，否則感測器會直接偵測到地板導致程式暫停模擬</p>
-<p><span style="background-color: #00ffff;">記分板程式註解</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
-    score1 = 0 -- 初始化一個名為score1的變數，值為0
-    
-    sensor = sim.getObject('./sensor') -- 從模擬場景中獲取一個名為sensor的物體
-    
-    -- 創建一個UI，包括標題、計分標籤和當前分數值標籤，使用plastique風格
-    xml = [[
-        &lt;ui title="Scoreboard" closeable="false" resizable="false" style="plastique"&gt;
-        &lt;label text="Score:" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="10"/&gt;
-        &lt;label text="0" style="* {background-color: #FFF; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="30"/&gt;
-     
-        &lt;/ui&gt;
-    ]]
-    ui = simUI.create(xml) -- 創建UI
-    simUI.setPosition(ui, 0,0, true) -- 將UI定位在屏幕左上角
-    bubbleRob = sim.getObject('/bubbleRob') -- 從模擬場景中獲取名為bubbleRob的物體句柄
-    ball = sim.getObject('/ball') -- 從模擬場景中獲取名為ball的物體句柄
-    bubbleRob2 = sim.getObject('/bubbleRob2') -- 從模擬場景中獲取名為bubbleRob2的物體句柄
-    initialPosition = sim.getObjectPosition(bubbleRob, -1) -- 獲取bubbleRob物體的初始位置
-    initialOrientation = sim.getObjectOrientation(bubbleRob, -1) -- 獲取bubbleRob物體的初始方向
-    initialPosition2 = sim.getObjectPosition(bubbleRob2, -1) -- 獲取bubbleRob2物體的初始位置
-    initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1) -- 獲取bubbleRob2物體的初始方向
-    initialballPosition = sim.getObjectPosition(ball, -1) -- 獲取ball物體的初始位置
-    initialballOrientation = sim.getObjectOrientation(ball, -1) -- 獲取ball物體的初始方向
-
-end
-
-function sysCall_actuation()
-    --simUI.setLabelText(ui, 30, tostring(sim.getFloatSignal("myVariable")))
-
-    -- 讀取接近傳感器的距離值，將其存儲在result變數中
-    result=sim.readProximitySensor(sensor)
-
-    -- 如果分數小於5，則執行以下操作
-    if(score1&lt;5)then
-
-        -- 如果檢測到接近物體，則執行以下操作
-        if(result&gt;0)then
-            -- 將score1變數增加1
-            score2 = score1+1
-
-            -- 在UI中更新分數值標籤的文本為score2
-            simUI.setLabelText(ui, 30, tostring(score2))
-
-            -- 重置bubbleRob、bubbleRob2和ball物體的位置和方向
-            sim.setObjectPosition(bubbleRob, -1, initialPosition)
-            sim.setObjectOrientation(bubbleRob, -1, initialOrientation)
-            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
-            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
-            sim.setObjectPosition(ball, -1, initialballPosition)
-            sim.setObjectOrientation(ball, -1, initialballOrientation)
-
-            -- 將score1設置為score2
-            score1=score2
-        end
-    else
-        -- 如果分數達到5，則暫停模擬
-        sim.pauseSimulation()
-    end
-end</pre>
-<p><span style="background-color: #00ffff;">倒數計時器程式註解</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">-- 初始化函數，初始化得分(score1)為0和計時器(count)為3600
-function sysCall_init()
-    -- initialize the score to 0
-    score1 = 0 -- 初始化得分
-    count = 3600 -- 初始化計時器
-    -- 獲取接近傳感器對象並創建UI界面
-    sensor = sim.getObject('./sensor')
-    xml = [[
-            &lt;ui title="Scoreboard" closeable="false" resizable="false" style="plastique"&gt;
-              &lt;label text="60:00.0" style="* {background-color: #F00; color: #FFF; font-size: 32px; font-weight: bold; padding: 4px; border-radius: 4px;}" id="10"/&gt;
-              &lt;label text="Score:" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="20"/&gt;
-              &lt;label text="0" style="* {background-color: #FFF; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="30"/&gt;
-            &lt;/ui&gt;
-          ]]
-    ui = simUI.create(xml)
-    simUI.setPosition(ui, 0, 0, true)
-    -- 獲取對象及其初始位置/方向
-    bubbleRob = sim.getObject('/bubbleRob')
-    ball = sim.getObject('/ball')
-    initialPosition = sim.getObjectPosition(bubbleRob, -1)
-    initialOrientation = sim.getObjectOrientation(bubbleRob, -1)
-    initialballPosition = sim.getObjectPosition(ball, -1)
-    initialballOrientation = sim.getObjectOrientation(ball, -1)
-    
-end
-
-function sysCall_actuation() -- 讀取接近傳感器值
-    result=sim.readProximitySensor(sensor)
-    -- 檢查得分是否小於5
-    if(score1&lt;5)then
-        -- 檢查接近傳感器是否檢測到某物
-        if(result&gt;0)then
-            -- 增加得分並更新UI標籤
-            score2 = score1+1
-            simUI.setLabelText(ui, 30, tostring(score2))
-            -- 重置對象的位置和方向
-            sim.setObjectPosition(bubbleRob, -1, initialPosition)
-            sim.setObjectOrientation(bubbleRob, -1, initialOrientation)
-            sim.setObjectPosition(ball, -1, initialballPosition)
-            sim.setObjectOrientation(ball, -1, initialballOrientation)
-            -- 更新得分變量
-            score1=score2
-        end
-    end
-    if count &gt; 0 then -- 檢查計時器是否大於0
-          count = count - 1 -- 減少倒數時間
-          local minutes = math.floor(count / 60) -- 計算分鐘
-          local seconds = count % 60 -- 計算秒數
-          local timeStr = string.format("%d:%02d", minutes , seconds) -- 格式化時間字符串
-          simUI.setLabelText(ui, 10, timeStr) -- 更新時間UI標籤
-          simUI.setLabelText(ui, 30, tostring(score1)) -- 更新score的UI標籤
-    else
-        -- 如果時間到會暫停模擬
-        sim.pauseSimulation()
-    end
-end</pre>
-<p>可以將倒數計時器顯示出來，但計時器所減少的時間會比正常時間快好幾倍</p>
-<p><img alt="" height="405" src="/downloads/ag10/20230414-3.png" width="720"/></p>
-<p>bubbleRob_football 檔案 : <a href="/downloads/ag10/newbing_bubbleRob_football.ttt">bubbleRob_football_pj1ag10</a></p>
-<p>加入連線對戰 bubbleRob_football 檔案 : <a href="/downloads/ag10/newbing_bubbleRob_football-2.ttt">bubbleRob_football-2_pj1ag10</a></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/N05LssWO1C8" title="YouTube video player" width="560"></iframe></p>
-<p><span style="background-color: #00ffff;">連線remoteAPI程式註解</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># 引入必要的模块
-from zmqRemoteApi import RemoteAPIClient
-import keyboard
-import sim
-import time
-import simConst
-
-# 打印程式啟動的訊息
-print('Program started')
-
-# 關閉所有已開啟的連線
-sim.simxFinish(-1)
-
-# 連接到遠端 API 伺服器
-clientID = sim.simxStart('192.168.56.1', 19998, True, True, 5000, 5)
-
-# 啟動仿真
-sim.simxStartSimulation(clientID, sim.simx_opmode_oneshot_wait)
-
-# 判斷是否成功連線到伺服器
-if clientID != -1:
-    print('Connected to remote API server')
-else:
-    print('Failed connecting to remote API server')
-
-# 打印仿真開始的訊息
-print('Simulation started')
-
-# 取得左右輪子的控制句柄
-errorCode, leftMotor = sim.simxGetObjectHandle(clientID, 'leftMotor2', sim.simx_opmode_oneshot_wait)
-errorCode, rightMotor = sim.simxGetObjectHandle(clientID, 'rightMotor2', sim.simx_opmode_oneshot_wait)
-
-# 設定 BubbleRob 的速度
-def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):
-    # 取得左右輪子的控制句柄
-    errorCode, leftMotor = sim.simxGetObjectHandle(clientID, '/leftMotor2', sim.simx_opmode_oneshot_wait)
-    errorCode, rightMotor = sim.simxGetObjectHandle(clientID, '/rightMotor2',sim.simx_opmode_oneshot_wait)
-    # 設定左右輪子的目標速度
-    sim.simxSetJointTargetVelocity(clientID, leftMotor, leftWheelVelocity, simConst.simx_opmode_streaming)
-    sim.simxSetJointTargetVelocity(clientID, rightMotor, rightWheelVelocity, simConst.simx_opmode_streaming)
-
-# 循環檢測鍵盤事件
-while True:
-    if keyboard.is_pressed('up'):
-        # 按下"上"鍵，前進
-        setBubbleRobVelocity(2.0, 2.0)
-    elif keyboard.is_pressed('down'):
-        # 按下"下"鍵，後退
-        setBubbleRobVelocity(-2.0, -2.0)
-    elif keyboard.is_pressed('left'):
-        # 按下"左"鍵，左轉
-        setBubbleRobVelocity(-2.0, 2.0)
-    elif keyboard.is_pressed('right'):
-        # 按下"右"鍵，右轉
-        setBubbleRobVelocity(2.0, -2.0)
-    elif keyboard.is_pressed('q'):
-        # 按下"q"鍵，停止仿真
-        sim.stopSimulation()
-    else:
-        # 沒有按下任何鍵，停止移動
-        setBubbleRobVelocity(0.0, 0.0)</pre>
-<p>此程式必須放在圖片紅色框框檔案中</p>
-<p><img alt="" height="405" src="/downloads/ag10/20230416.png" width="720"/></p>
-<p><span style="background-color: #00ffff;">啟動遠端API程式註解</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">-- The main script is not supposed to be modified, except in special cases.
-require('defaultMainScript')
-function sysCall_init()
-simRemoteApi.start(19998) -- 啟動遠程 API，監聽端口號為 19998
-end</pre>
-<p><span style="background-color: #00ffff;">連線 API sensor 程式註解</span><br/><br/></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">--在這個函數中初始化變數，設置UI元素，並獲取物體的初始位置和方向
-function sysCall_init()
-score1 = 0 --初始化分數變量
-count = 24000 --初始化計時器變量，代表比賽時間，這裡設置為24000，即400秒
-sensor = sim.getObject('./sensor') --獲取名為"sensor"的接近傳感器
---創建UI元素，顯示分數和計時器
-xml2 = [[
-&lt;ui title="計分板" closeable="false" resizable="false" style="plastique"&gt;
-&lt;label text="分數：" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="20"/&gt;
-&lt;label text="0" style="* {background-color: #FFF; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="30"/&gt;
-&lt;/ui&gt;
-]]
-ui = simUI.create(xml2) --創建計分板UI
-simUI.setPosition(ui, 0,0, true) --設置UI位置
-xml3 = [[
-&lt;ui title="計時器" closeable="false" resizable="false" style="plastique"&gt;
-&lt;label text="400:00.0" style="* {background-color: #F00; color: #FFF; font-size: 32px; font-weight: bold; padding: 4px; border-radius: 4px;}" id="10"/&gt;
-&lt;/ui&gt;
-]]
-ui2 = simUI.create(xml3) --創建計時器UI
-simUI.setPosition(ui2, 900,0, true) --設置UI位置
---獲取機器人和球的句柄，以及它們的初始位置和方向
-bubbleRob = sim.getObject('/bubbleRob')
-ball = sim.getObject('/ball')
-bubbleRob2 = sim.getObject('/bubbleRob2')
-initialPosition = sim.getObjectPosition(bubbleRob, -1)
-initialOrientation = sim.getObjectOrientation(bubbleRob, -1)
-initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)
-initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)
-initialballPosition = sim.getObjectPosition(ball, -1)
-initialballOrientation = sim.getObjectOrientation(ball, -1)
-end
-
---在這個函數中實現比賽計時和計分邏輯
-function sysCall_actuation() -- 讀取接近傳感器值
-    result=sim.readProximitySensor(sensor)
-    -- 檢查得分是否小於5
-    if(score1&lt;5)then
-        -- 檢查接近傳感器是否檢測到某物
-        if(result&gt;0)then
-            -- 增加得分並更新UI標籤
-            score2 = score1+1
-            simUI.setLabelText(ui, 30, tostring(score2))
-            -- 重置對象的位置和方向
-            sim.setObjectPosition(bubbleRob, -1, initialPosition)
-            sim.setObjectOrientation(bubbleRob, -1, initialOrientation)
-            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
-            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
-            sim.setObjectPosition(ball, -1, initialballPosition)
-            sim.setObjectOrientation(ball, -1, initialballOrientation)
-            -- 更新得分變量
-            score1=score2
-        end
-    end
-    if count &gt; 0 then -- 檢查計時器是否大於0
-          count = count - 1 -- 減少倒數時間
-          local minutes = math.floor(count / 60) -- 計算分鐘
-          local seconds = count % 60 -- 計算秒數
-          local timeStr = string.format("%d:%02d", minutes , seconds) -- 格式化時間字符串
-          simUI.setLabelText(ui, 10, timeStr) -- 更新時間UI標籤
-          simUI.setLabelText(ui, 30, tostring(score1)) -- 更新score的UI標籤
-    else
-        -- 如果時間到會暫停模擬
-        sim.pauseSimulation()
-    end
-end</pre>
-<p><span style="background-color: #00ffff;">連線 API sensor2 程式註解</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
-        score1 = 0 -- 初始分數為 0
-        sensor = sim.getObject('./sensor2')  -- 取得感測器物件
-        xml = [[
-             &lt;ui title="Scoreboard" closeable="false" resizable="false" style="plastique"&gt;
-             &lt;label text="Score:" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px; }" id="40"/&gt;
-             &lt;label text="0" style="* {background-color: #FFF; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;}" id="50"/&gt;
-              &lt;/ui&gt;
-        ]]  -- 創建 UI 界面
-        ui = simUI.create(xml)  -- 顯示 UI 界面
-        simUI.setPosition(ui, 1770,0, true)  -- 設定 UI 界面的位置
-        bubbleRob = sim.getObject('/bubbleRob')  -- 取得 BubbleRob 物件
-        ball = sim.getObject('/ball')  -- 取得球物件
-        bubbleRob2 = sim.getObject('/bubbleRob2')  -- 取得第二個 BubbleRob 物件
-        initialPosition = sim.getObjectPosition(bubbleRob, -1)  -- 取得 BubbleRob 初始位置
-        initialOrientation = sim.getObjectOrientation(bubbleRob, -1)  -- 取得 BubbleRob 初始方向
-        initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)  -- 取得第二個 BubbleRob 初始位置
-        initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)  -- 取得第二個 BubbleRob 初始方向
-        initialballPosition = sim.getObjectPosition(ball, -1)  -- 取得球的初始位置
-        initialballOrientation = sim.getObjectOrientation(ball, -1)  -- 取得球的初始方向
-end
-
-function sysCall_actuation()
-     --simUI.setLabelText(ui, 30, tostring(sim.getFloatSignal("myVariable")))
-     result=sim.readProximitySensor(sensor) -- 讀取感測器的值
-     if(score1&lt;5)then -- 如果分數小於 5 分
-       if(result&gt;0)then -- 如果感測器的值大於 0
-        score2 = score1+1 -- 分數加 1
-        simUI.setLabelText(ui, 50, tostring(score2)) -- 更新分數顯示
-        sim.setObjectPosition(bubbleRob, -1, initialPosition)  -- 將 BubbleRob 重置到初始位置
-        sim.setObjectOrientation(bubbleRob, -1, initialOrientation)  -- 將 BubbleRob 重置到初始方向
-        sim.setObjectPosition(bubbleRob2, -1, initialPosition2)  -- 將第二個 BubbleRob 重置到初始位置
-        sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)  -- 將第二個 BubbleRob 重置到初始方向
-        sim.setObjectPosition(ball, -1, initialballPosition)  -- 將 Ball 重置到初始位置
-        sim.setObjectOrientation(ball, -1, initialballOrientation)  -- 將 Ball 重置到初始方向
-        -- 將score1設置為score2
-        score1=score2
-        end
-    else
-        -- 如果分數達到5，則暫停模擬
-        sim.pauseSimulation()
-    end
-end</pre>
-<p></p>
-<p>所有檔案壓縮檔：<a href="/downloads/ag10/bubbleRob football 2a-pj1ag10.7z">bubbleRob football 2a-pj1ag10.7z</a></p><h2>team12</h2>
-<p>editor:<span>41023114 王樟皓、41023126 卓桓琮</span></p>
-<p><span><strong>Step1</strong>:建立足球場景，透過onshape繪出足球的場景，足球分成兩部分第一部分為足球的牆壁第二部分為球門。足球的牆壁:</span><a href="https://cad.onshape.com/documents/1ef9bb78edd5251adafdfbeb/w/0699139f42c9ebc4817c6156/e/20413e231639dd10dc11bb42?renderMode=0&amp;uiState=643a420fb4776c6d78624f23">wall</a><span> 球門:</span><a href="https://cad.onshape.com/documents/a377cc4e5b1ef7cab53572bc/w/239bf2d6c24d9f9c80b7a628/e/20ebee5effb2f8812f5d7e8a?renderMode=0&amp;uiState=643a427646ce454f67f78abb">door</a></p>
-<p><span><strong>Step2</strong>:轉成STL檔匯入coppaliasim場景中，放入先前製作的bobbleRob robot，並複製兩個在場景中，加入球體 過程:<a href="https://youtu.be/Rc-BSnYI17w">https://youtu.be/Rc-BSnYI17w</a></span></p>
-<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Rc-BSnYI17w" width="560"></iframe></span></p>
-<p><span><strong>Step3</strong>:設定coppliasim中的參數</span></p>
-<p><span>1.在兩個球門上加入感應sensor，以感測是否進球，將兩個seonsor拉到球門底下</span></p>
-<p><span><img alt="" height="313" src="/images/pj1-note1.png" width="556"/></span></p>
-<p><span>2.設定ball的參數</span></p>
-<p>
-<script>
-var winkVideoData_41023126 = {
-  dataVersion: 1,
-  frameRate: 10,
-  buttonFrameLength: 5,
-  buttonFrameOffset: 2,
-  frameStops: {
-  },
-};
-</script>
-</p>
-<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_41023126" height="630" muted="true" width="1008">
-<source src="./../downloads/ag12/pj1-ball.mp4" type="video/mp4"/></video></div>
-<p><span></span>3.bubbleRob robot 參數設定:<a href="https://mdecd2023.github.io/2a-pj1ag12/content/%E8%A3%BD%E4%BD%9C%E9%81%8E%E7%A8%8B.html">bubbleRob</a></p>
-<p><span><strong>Step4</strong>:加入sensor程式碼-利用chatgpt 寫出程式碼-計時器(記分板-參考至ag2)</span></p>
-<p><span>文字檔:<a href="/downloads/ag12/sensor-program.txt">sensor-program</a></span></p>
-<p><span><img alt="" height="393" src="/images/pj1-note4.png" width="469"/></span></p>
-<p><span><img alt="" height="450" src="/images/pj1-note5.png" width="482"/></span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
-    score1 = 0
-    remaining_time = 60 -- 1 minute
-    sensor = sim.getObject('./sensor')
-    xml = [[        <ui closeable="false" resizable="false" title="Scoreboard">            <label id="10" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;" text="Score:"></label>            <label id="30" style="* {background-color: #1E90FF; color: #ffffff; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;" text="0"></label>            <label id="40" style="* {background-color: #808080; color: #000000; font-size: 20px; font-weight: bold; padding: 5px; border-radius: 5px;" text="Time left: 60s"></label>        </ui>    ]]
-    ui = simUI.create(xml)
-    simUI.setPosition(ui, 0,0, true)
-    bubbleRob1 = sim.getObject('/bubbleRob1')
-    ball = sim.getObject('/ball')
-    bubbleRob2 = sim.getObject('/bubbleRob2')
-    initialPosition = sim.getObjectPosition(bubbleRob1, -1)
-    initialOrientation = sim.getObjectOrientation(bubbleRob1, -1)
-    initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)
-    initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)
-    initialballPosition = sim.getObjectPosition(ball, -1)
-    initialballOrientation = sim.getObjectOrientation(ball, -1)
-end
-
-function sysCall_actuation()
-    -- read the proximity sensor value
-    result=sim.readProximitySensor(sensor)
-    -- check if the remaining time is greater than 0
-    if(remaining_time &gt; 0) then
-        -- check if the proximity sensor detects something
-        if(result&gt;0) then
-            -- increase the score and update the UI label
-            score2 = score1+1
-            simUI.setLabelText(ui, 30, tostring(score2))
-            -- reset the objects' positions and orientations
-            sim.setObjectPosition(bubbleRob1, -1, initialPosition)
-            sim.setObjectOrientation(bubbleRob1, -1, initialOrientation)
-            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
-            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
-            sim.setObjectPosition(ball, -1, initialballPosition)
-            sim.setObjectOrientation(ball, -1, initialballOrientation)
-            -- update the score variable
-            score1=score2
-        end
-        -- update the remaining time and the UI label
-        remaining_time = remaining_time - sim.getSimulationTimeStep()
-        simUI.setLabelText(ui, 40, "Time left: "..math.floor(remaining_time).."s")
-    else
-        sim.stopSimulation()
-    end
-end</pre>
-<p><span><strong>第二版 sersor 程式碼 </strong></span></p>
-<p>文字檔:<a href="/downloads/ag12/sensor-program2.txt">sensor-program2</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
-    score1 = 0
-    remaining_time = 1200 -- 20 minute
-    sensor = sim.getObject('./sensor1')
-    xml = [[        <ui closeable="false" resizable="false" title="Scoreboard">            <label id="10" style="* {background-color: #808080; color: #000000; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;" text="Score:"></label>            <label id="30" style="* {background-color: #1E90FF; color: #ffffff; font-size: 40px; font-weight: bold; padding: 5px; border-radius: 5px;" text="0"></label>            <label id="40" style="* {background-color: #d91111; color: #000000; font-size: 20px; font-weight: bold; padding: 5px; border-radius: 5px;" text="Time left: 60s"></label>        </ui>    ]]
-    ui = simUI.create(xml)
-    simUI.setPosition(ui, 0,0, true)
-    bubbleRob1 = sim.getObject('/bubbleRob1')
-    ball = sim.getObject('/ball')
-    bubbleRob2 = sim.getObject('/bubbleRob2')
-    initialPosition = sim.getObjectPosition(bubbleRob1, -1)
-    initialOrientation = sim.getObjectOrientation(bubbleRob1, -1)
-    initialPosition2 = sim.getObjectPosition(bubbleRob2, -1)
-    initialOrientation2 = sim.getObjectOrientation(bubbleRob2, -1)
-    initialballPosition = sim.getObjectPosition(ball, -1)
-    initialballOrientation = sim.getObjectOrientation(ball, -1)
-end
-
-function sysCall_actuation()
-    -- read the proximity sensor value
-    result=sim.readProximitySensor(sensor)
-    -- check if the remaining time is greater than 0
-    if(remaining_time &gt; 0) then
-        -- check if the proximity sensor detects something
-        if(result&gt;0) then
-            -- increase the score and update the UI label
-            score2 = score1+1
-            simUI.setLabelText(ui, 30, tostring(score2))
-            -- reset the objects' positions and orientations
-            sim.setObjectPosition(bubbleRob1, -1, initialPosition)
-            sim.setObjectOrientation(bubbleRob1, -1, initialOrientation)
-            sim.setObjectPosition(bubbleRob2, -1, initialPosition2)
-            sim.setObjectOrientation(bubbleRob2, -1, initialOrientation2)
-            sim.setObjectPosition(ball, -1, initialballPosition)
-            sim.setObjectOrientation(ball, -1, initialballOrientation)
-            -- update the score variable
-            score1=score2
-        end
-        -- update the remaining time and the UI label
-        remaining_time = remaining_time - sim.getSimulationTimeStep()
-        simUI.setLabelText(ui, 40, "Time left: "..math.floor(remaining_time).."s")
-    else
-        sim.stopSimulation()
-    end
-end</pre>
-<p><span><strong></strong></span></p>
-<p><span><strong>Step5</strong>:打開小白窗 加入程式碼 按go</span></p>
-<p><span>文字檔:<a href="/downloads/ag12/senser1-whiteboard-program.txt">whitewindow</a></span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor
-from zmqRemoteApi import RemoteAPIClient
-import keyboard
-
-client = RemoteAPIClient('localhost', 23000)
-
-print('Program started')
-sim = client.getObject('sim')
-sim.startSimulation()
-print('Simulation started')
-
-def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):
-    leftMotor = sim.getObject('/leftMotor')
-    rightMotor = sim.getObject('/rightMotor')
-    sim.setJointTargetVelocity(leftMotor, leftWheelVelocity)
-    sim.setJointTargetVelocity(rightMotor, rightWheelVelocity)
-
-'''
-# Example usage 1:
-setBubbleRobVelocity(1.0, 1.0)
-time.sleep(2)
-setBubbleRobVelocity(0.0, 0.0)
-'''
-# use keyborad to move BubbleRob
-
-while True:
-    if keyboard.is_pressed('up'):
-        setBubbleRobVelocity(1.0, 1.0)
-    elif keyboard.is_pressed('down'):
-        setBubbleRobVelocity(-1.0, -1.0)
-    elif keyboard.is_pressed('left'):
-        setBubbleRobVelocity(-1.0, 1.0)
-    elif keyboard.is_pressed('right'):
-        setBubbleRobVelocity(1.0, -1.0)
-    elif keyboard.is_pressed('q'):
-        # stop simulation
-        sim.stopSimulation()
-    else:
-        setBubbleRobVelocity(0.0, 0.0)</pre>
-<p><strong>在football的場景加入計時器和記分板 過程:<a href="https://youtu.be/EZ_mE9P4j-s">https://youtu.be/EZ_mE9P4j-s</a></strong></p>
-<p><strong>第一版</strong></p>
-<p><strong></strong></p>
-<p><img alt="" height="283" src="/images/pj1-note3.png" width="505"/></p>
-<p></p>
-<p><img alt="" height="267" src="/images/pj1-note2.png" width="508"/></p>
-<p></p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Dnn487BBg2E" width="560"></iframe></p>
-<p><strong></strong></p>
-<p><strong>第二版</strong></p>
-<p><strong></strong></p>
-<p><strong><img alt="" height="444" src="/images/pj1-note11.png" width="790"/></strong></p>
-<p></p>
-<p><img alt="" height="426" src="/images/pj1-note10.png" width="757"/></p>
-<p></p>
-<p><strong></strong></p>
-<p><strong><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Js30bBYL3Wk" width="560"></iframe><br/></strong></p>
-<p><strong></strong></p>
-<p><strong>Step6</strong>:連線對戰</p>
-<p>1.查詢ipconfig 找到ipv4埠號 </p>
-<p><img alt="" height="343" src="/images/pj1-note6.png" width="544"/></p>
-<p>2.將自己ipv4埠號複製到小白窗的程式中</p>
-<p><img alt="" height="404" src="/images/pj1-note7.png" width="338"/></p>
-<p><img alt="" height="344" src="/images/pj1-note8.png" width="272"/></p>
-<p>3.開始兩人對戰</p>
-<p><img alt="" height="252" src="/images/pj1-note9.png" width="448"/></p>
-<p></p>
-<p>Final:連線對打未完成 都有設定 防火牆也有關 但是對方就連不到</p>
-<p>連線失敗過程:</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/hoakN4USk7A" width="560"></iframe></p>
-<p></p>
-<p>football.ttt檔:<a href="/downloads/ag12/pj1-football.ttt">pj1-football</a></p>
 <p></p>
 <h1>pj2</h1>
 <p>4/17  4人操控 bubbleRob 利用 remote API server 錄製的影片</p>
@@ -792,7 +275,48 @@ function sysCall_actuation()
 end</pre>
 <p></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/PTypbITJJG4" title="YouTube video player" width="560"></iframe></p>
-<p></p><h2>41023114</h2>
+<h2>pj2ag3</h2>
+<p>1.製作實體記分板</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="/images/計.jpg" width="760"/><br/></span></pre>
+<p><a href="/downloads/w11記分板.ttt">記分板檔案</a></p>
+<p>2.記分板<a href="/downloads/記分板.txt">程式</a></p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="/images/場.jpg" width="760"/></span><br/>得分後球會回到中心球員不會回到原來的地方<br/>剩下的還在討論<br/><a href="/downloads/記分板.ttt">記分板草圖</a></pre>
+<p><a href="/downloads/w11記分板.ttt">第一版帶有記分板+場地</a></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/1itAVTnyai8" title="YouTube video player" width="560"></iframe></p>
+<p>導入<a href="/downloads/pj3.ttt">新場地</a></p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="/images/5.jpg" width="760"/><br/></span></pre>
+<p><a href="/downloads/w11final2.ttt">第二版添加記分板程式 </a></p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="/images/6.jpg" width="760"/><br/></span></pre>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr">得分後球會回到中心球員不會回到原來的地方<br/>記分板會計分</pre>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/3W0pFYYsvZA" title="YouTube video player" width="560"></iframe></p>
+<p>製作大小與尺寸</p>
+<p><span style="color: #000000; font-family: Quicksand, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+<script>
+var winkVideoData123 = {
+
+  dataVersion: 1,
+
+  frameRate: 10,
+
+  buttonFrameLength: 5,
+
+  buttonFrameOffset: 2,
+
+  frameStops: {
+
+  },
+
+};
+</script>
+</span></p>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData123" height="630" muted="true" width="1008">
+<source src="./../downloads/記分板.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+</div>
+</div><h2>41023114</h2>
 <p>w10</p>
 <p>1.What is zmqRemoteAPI, and how does it relate to CoppeliaSim?</p>
 <p>   zmqRemoteAPI是什麼，它如何與CoppeliaSim相關聯？</p>
@@ -978,7 +502,8 @@ print ('Program ended')</pre>
 <div><span style="background-color: #00ffff;">5.Can you give an example of a project or task that you could complete using zmqRemoteAPI in CoppeliaSim?</span></div>
 <div></div>
 <div>answer：以下是在課程上利用 zmqRemoteAPI 在 CoppeliaSim 中完成四人連線控制機器人之影片</div>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/8Nqbb7NHTvE" title="YouTube video player" width="560"></iframe></p><h2>41023126</h2>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/8Nqbb7NHTvE" title="YouTube video player" width="560"></iframe></p>
+<h2>41023126</h2>
 <p>5/1討論機械式計分器</p>
 <p>有三種方式</p>
 <p>第一種 使用凸輪機構</p>
@@ -993,7 +518,8 @@ print ('Program ended')</pre>
 <p><img alt="" height="441" src="/images/記分板第一版-1.png" width="473"/></p>
 <p>利用onshape 所繪製 連結網址:<a href="https://cad.onshape.com/documents/025ed0d2004ecc2f22856170/w/0cca45e995252e3db618a8c5/e/6a3fe3ab387ef63c13128863?renderMode=0&amp;uiState=6456702e8c7fe730de23047f">scoreboard 第一版</a></p>
 <p>在coppeliasim中模擬放置</p>
-<p><img alt="" height="434" src="/images/記分板第一版-3.png" width="578"/></p><h2>41023138</h2>
+<p><img alt="" height="434" src="/images/記分板第一版-3.png" width="578"/></p>
+<h2>41023138</h2>
 <p>w10</p>
 <p>問題:What are the advantages and disadvantages of using zmqRemoteAPI compared to other methods of communication between Python and CoppeliaSim?</p>
 <p>answer:</p>
@@ -1189,7 +715,8 @@ print ('Program ended')</pre>
 <div><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/DVIoMEVhI7k" width="560"></iframe></span><span></span></div>
 </div>
 </div>
-</div><h1>note</h1>
+</div>
+<h1>note</h1>
 <p>課程筆記</p>
 <h2>stud2.cycu.org</h2>
 <p>資料連結:<a href="https://teams.microsoft.com/_#/school/ClassNotes/w5?threadId=19:a398eb1b5dc841b690f68a4e4dcefdb7@thread.tacv2&amp;ctx=channel">team-cad2022-w5</a></p>
@@ -1211,7 +738,8 @@ print ('Program ended')</pre>
 <p><strong>41023126</strong></p>
 <p>提出計時器之變動機構設計</p>
 <p>設計出機械式計分板第一版</p>
-<p><strong>41023138</strong></p><h1>Brython</h1>
+<p><strong>41023138</strong></p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
