@@ -141,10 +141,16 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">note << <a href='note.html'>Previous</a> <a href='w14 IP設置.html'>Next</a> >> w14 IP設置<br /><h1>stud2.cycu.org</h1>
-<p>資料連結:<a href="https://teams.microsoft.com/_#/school/ClassNotes/w5?threadId=19:a398eb1b5dc841b690f68a4e4dcefdb7@thread.tacv2&amp;ctx=channel">team-cad2022-w5</a></p>
-<p>step 1：Login to https://mail.nfu.edu.tw - 查看登入 stud2.cycu.org 伺服器的密碼, 帳號為 cd+學號, 密碼為四個字元, 包括數字與小寫英文字母，並查詢 stud.cycu.org 中與帳號對應的近端 (給 127.0.0.1 使用, 9 開頭的 port) 與遠端 (給 stud.cycu.org, 8 開頭的 port) 埠號 <br/>step 2：修改可攜 Python 3.10.6 start.bat, 蓋掉第三行後重新啟動, 目的希望將操作系統的命令搜尋路徑放在可攜目錄搜尋路徑之後. <br/>step 3：重新啟動可攜程式環境, 在其中一個命令列, ssh  cd+學號@stud2.cycu.org, 表示要使用 secure shell 遠端登入到 stud2.cycu.org, 這是一台 Linux 主機, 安裝 Ubuntu 22.04 Server.(若使用的網路連線協定並無 IPv6,  可將系統的 proxy 設為 140.130.17.4:3128 kmolab/kmolab) <br/>step 4：在 ssh 登入畫面, 以 ssh-keygen 建立 key pairs, .ssh/id_rsa 為 private key, id_rsa.pub 為 public key <br/>step 5：設法利用 Filezilla, 以 sftp 安全的(Secure)檔案(File)傳輸(Transmission)協定(Protocol), 與 stud.cycu.org 伺服器連結. <br/>step 6：利用  Filezilla sftp 取下 id_rsa.pub, 登錄至 Github 帳號下的 Setting - &gt;  SSH and GPG keys. <br/>step 7：對 server sftp 也可以利用  Filezilla portable, 以圖形介面完成. 而 ssh 也可以透過  putty.exe 執行遠端登入. <br/>step 8：接下來要下載  config 設定檔案,  以 sftp 放入 stud2.cycu.org 主機的 .ssh 目錄中. <br/>step 9：接下來要在  Ubuntu (也就是 stud.cycu.org 這台主機所安裝的操作系統) 中, 設定 .gitconfig, 總共包含三項設定: git config --global user.name "scrum-1", git config --global user.email  "scrum1@mde.tw"   以及 git config --global http.proxy http://p42.cycu.org:3128, 這三個設定必須在 ssh 登入畫面中執行, 設定完成檔案會存入帳號根目錄中的 .gitconfig  <br/>step 10：接著下載 server.py, 在 Windows 編輯 server.py, 將個人分配到的 9xxxx 埠號填入後存檔, 以 sftp 放入上列取下的倉儲根目錄. <br/>會使用的指令：<br/>pwd 代表 print working directory, clear - 清除螢幕<br/>cd - 更換目錄<br/>ls -l - 列出目錄詳細內容<br/>chmod u+x acp - 表示讓 user 可以 execute acp script (能夠讓使用者以 source acp 加上提交字串進行 git add, git commit, git push, 如何在 Windows 執行 acp.bat 加上提交字串. <br/>ps axo pid,comm,user | grep "python3" - 表示要找出使用 python3 執行的 process, 列出其 process id, command 以及 user<br/>kill -9 - 移除 python3 執行的 process id</p>
-<br />note << <a href='note.html'>Previous</a> <a href='w14 IP設置.html'>Next</a> >> w14 IP設置</div>
+    <div id="tipue_search_content">w14 IP設置 << <a href='w14 IP設置.html'>Previous</a> <a href='progress.html'>Next</a> >> progress<br /><h1>連線不了問題</h1>
+<p>前幾周芬玩8人一組，遇到同步不了的問題</p>
+<p>問題:</p>
+<p>error: Your local changes to the following files would be overwritten by merge: server.py<br/><br/>Please commit your changes or stash them before you merge. Aborting</p>
+<p>解決辦法:</p>
+<p>這個錯誤是由於你在合併(merge)操作之前,當地目錄中的“server.py'文件有未提交的<br/>修改所致·要解決這個問題,你可以執行以下步驟:</p>
+<p><br/>1.確認你對“server.py'文件的修改是否重要,如果是的話,你可能想先提交這些修改。<br/>2.如果你不想提交這些修改,你可以使用otaoh命令将它們暫存起來·請運行以下命令:</p>
+<p>git stash<br/>3.接著,你可以執行合併操作·使用合併而令乑合併分支(比如 'master分支):<br/><br/>git merge &lt;branch-name&gt;</p>
+<p></p>
+<p></p><br />w14 IP設置 << <a href='w14 IP設置.html'>Previous</a> <a href='progress.html'>Next</a> >> progress</div>
         
     <!-- footer -->
       <div class="container">
