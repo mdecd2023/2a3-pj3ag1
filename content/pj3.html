@@ -204,7 +204,14 @@ img.add_border {
 <p>問題:程式並沒有發現錯誤但是輪盤計分板還是無法作動</p>
 <p>推測有可能的問題</p>
 <p>1.可能轉軸的參數設定錯誤</p>
-<p>2.主動軸與從動軸設定有誤</p><br />pj2ag3 << <a href='pj2ag3.html'>Previous</a> <a href='場地設置.html'>Next</a> >> 場地設置</div>
+<p>2.主動軸與從動軸設定有誤</p>
+<p>在模擬中的問題</p>
+<p><span>[CoppeliaSim:warning]</span> <span>Detected dynamically enabled, non-convex shapes. Those might drastically slow down simulation, and introduce unstable behaviour.</span></p>
+<p><span>[CoppeliaSim:warning]</span> <span>Detected a static, respondable shape, built on top of a non-static tree. This might lead to strange and unrealistic behaviour.</span></p>
+<p>chatgpt上的回覆</p>
+<p>[CoppeliaSim:warning] 偵測到動態啟用的非凸形狀，可能會大幅降低模擬速度並導致不穩定的行為。<br/>[CoppeliaSim:warning] 偵測到靜態的可回應形狀建立在非靜態樹上，這可能導致奇怪和不真實的行為。</p>
+<p>這些警告表示在場景中檢測到一些問題。第一個警告表示檢測到使用非凸形狀的動態物體，這可能會使模擬速度變慢並引入不穩定的行為。建議您優化場景，使用凸形狀的物體，或減少非凸形狀物體的數量。</p>
+<p>第二個警告指出檢測到一個靜態的可回應形狀，建立在非靜態樹的頂部。這可能會導致奇怪和不真實的行為。建議您檢查場景中物體的層次結構和約束，確保它們的設置正確，並符合您期望的行為。</p><br />pj2ag3 << <a href='pj2ag3.html'>Previous</a> <a href='場地設置.html'>Next</a> >> 場地設置</div>
         
     <!-- footer -->
       <div class="container">
