@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='pj2.html'>pj2</a><ul class='dropdown'><li class='has-children'><a href='pj2ag1.html'>pj2ag1</a><ul class='dropdown'><li><a href='41023114.html'>41023114</a><li><a href='41023119.html'>41023119</a><li><a href='41023126.html'>41023126</a><li><a href='41023138.html'>41023138</a></li></ul><li><a href='pj2ag3.html'>pj2ag3</a></li></ul><li class='has-children'><a href='pj3.html'>pj3</a><ul class='dropdown'><li><a href='場地設置.html'>場地設置</a><li><a href='車子設計與組裝.html'>車子設計與組裝</a><li><a href='輪盤記分板繪製.html'>輪盤記分板繪製</a><li><a href='輪盤記分板程式.html'>輪盤記分板程式</a><li><a href='車子控制程式與設置.html'>車子控制程式與設置</a><li><a href='組裝.html'>組裝</a><li><a href='meeting minutes.html'>meeting minutes</a></li></ul><li class='has-children'><a href='note.html'>note</a><ul class='dropdown'><li><a href='stud2.cycu.org.html'>stud2.cycu.org</a><li><a href='w14 IP設置.html'>w14 IP設置</a><li><a href='連線不了問題.html'>連線不了問題</a><li><a href='coppeliaSimEdu_4.5.1座標偏移.html'>coppeliaSimEdu_4.5.1座標偏移</a></li></ul><li><a href='progress.html'>progress</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='pj2.html'>pj2</a><ul class='dropdown'><li class='has-children'><a href='pj2ag1.html'>pj2ag1</a><ul class='dropdown'><li><a href='41023114.html'>41023114</a><li><a href='41023119.html'>41023119</a><li><a href='41023126.html'>41023126</a><li><a href='41023138.html'>41023138</a></li></ul><li><a href='pj2ag3.html'>pj2ag3</a></li></ul><li class='has-children'><a href='pj3.html'>pj3</a><ul class='dropdown'><li><a href='場地設置.html'>場地設置</a><li><a href='車子設計與組裝.html'>車子設計與組裝</a><li><a href='輪盤記分板繪製.html'>輪盤記分板繪製</a><li><a href='輪盤記分板程式.html'>輪盤記分板程式</a><li><a href='車子控制程式與設置.html'>車子控制程式與設置</a><li><a href='組裝.html'>組裝</a><li><a href='meeting minutes.html'>meeting minutes</a></li></ul><li class='has-children'><a href='note.html'>note</a><ul class='dropdown'><li><a href='組員連線步驟.html'>組員連線步驟</a><li><a href='stud2.cycu.org.html'>stud2.cycu.org</a><li><a href='w14 IP設置.html'>w14 IP設置</a><li><a href='連線不了問題.html'>連線不了問題</a><li><a href='coppeliaSimEdu_4.5.1座標偏移.html'>coppeliaSimEdu_4.5.1座標偏移</a></li></ul><li><a href='progress.html'>progress</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,193 +141,32 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Brython << <a href='Brython.html'>Previous</a> <br /><h1>Brython_ex2</h1>
-<p>This code uses the Euler method to approximate the solution to the ODE dy/dx = x - y with an initial condition of y0 = 1.0. The solution is calculated for a range of x values from 0 to 5.</p>
-<p id="brython_div"></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
-<script src="./../cmsimde/static/brython.js"></script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/']});
-}
-</script>
-</pre>
-<p>Solve ODE:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document
-
-def dy_dx(y, x):
-    return x - y
-
-x_start = 0
-x_end = 5
-n_points = 100
-x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
-y0 = 1.0
-h = x[1] - x[0]
-y = [y0]
-for i in range(1, len(x)):
-    y.append(y[-1] + h * dy_dx(y[-1], x[i-1]))
-
-# Create a new paragraph element and set its text content to the solution
-p = document.createElement('p')
-p.textContent = f"The solution to the ODE is: {y}"
-
-# Append the paragraph element to the body of the webpage
-document.body.appendChild(p)</pre>
+    <div id="tipue_search_content">note << <a href='note.html'>Previous</a> <a href='stud2.cycu.org.html'>Next</a> >> stud2.cycu.org<br /><h1>組員連線步驟</h1>
+<p><strong><span style="background-color: #ffff00;">完成組員：41023120</span></strong></p>
+<p>1.關掉防火牆</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="400" src="./../images/防.jpg" width="450"/><br/></span></pre>
+<p>2.點擊進階設定</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="400" src="./../images/防2.jpg" width="450"/><br/></span></pre>
+<p>3.組長點擊輸入規則，組員則點擊輸出規則</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="./../images/防3.jpg" width="760"/><br/></span></pre>
+<p>4.接著點選新增規則，點選連接埠，規則選擇TCP，接著設定特定<span>連接埠</span>為23000-23050</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="./../images/防4.jpg" width="760"/><br/></span></pre>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="./../images/防5.jpg" width="760"/><br/></span></pre>
+<p>5.選擇允許連線</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="./../images/防6.jpg" width="760"/><br/></span></pre>
 <p></p>
-<p>
-<script type="text/python3">
-from browser import document, window
-
-def dy_dx(y, x):
-    return x - y
-
-x_start = 0
-x_end = 5
-n_points = 100
-x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
-y0 = 1.0
-h = x[1] - x[0]
-y = [y0]
-for i in range(1, len(x)):
-    y.append(y[-1] + h * dy_dx(y[-1], x[i-1]))
-
-# Create a new div element to hold the plot
-#plot_div = document.createElement('div')
-#plot_div.id = 'plot'
-#document.body.appendChild(plot_div)
-plot_div = document["brython_div"]
-
-# Plot the solution using plotly.js
-data = [{'x': x, 'y': y}]
-window.Plotly.newPlot('brython_div', data)
-</script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-</p>
-<p>Brython environment and <a href="https://plotly.com/javascript/">Plotly.js</a>:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
-&lt;script src="./../cmsimde/static/brython_stdlib.js"&gt;&lt;/script&gt;
-&lt;script&gt;// &lt;![CDATA[
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/']});
-}
-// ]]&gt;&lt;/script&gt;
-&lt;p id="brython_div"&gt;&lt;/p&gt;</pre>
-<p>Brython programe with Plotly.js:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, window
-
-def dy_dx(y, x):
-    return x - y
-
-x_start = 0
-x_end = 5
-n_points = 100
-x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
-y0 = 1.0
-h = x[1] - x[0]
-y = [y0]
-for i in range(1, len(x)):
-    y.append(y[-1] + h * dy_dx(y[-1], x[i-1]))
-
-# Create a new div element to hold the plot
-#plot_div = document.createElement('div')
-#plot_div.id = 'plot'
-#document.body.appendChild(plot_div)
-plot_div = document["brython_div"]
-
-# Plot the solution using plotly.js
-data = [{'x': x, 'y': y}]
-window.Plotly.newPlot('brython_div', data)</pre>
-<p>This code defines a function dy_dx that represents the mass-spring-damper ordinary differential equation. The Euler method is used to solve this equation for a range of x values from 0 to 20 with initial conditions of y0 = [1.0, 0.0]. The solution is then plotted on the webpage using <a href="https://plotly.com/javascript/">plotly.js</a>.</p>
-<p id="mass-spring-damper"></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
-<script type="text/python3">
-from browser import document, window
-
-m = 1.0  # mass
-k = 1.0  # spring constant
-c = 0.1  # damping coefficient
-
-def dy_dx(y, x):
-    y1, y2 = y
-    return [y2, -(k/m)*y1 - (c/m)*y2]
-
-x_start = 0
-x_end = 20
-n_points = 1000
-x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
-y0 = [1.0, 0.0]
-h = x[1] - x[0]
-y = [y0]
-for i in range(1, len(x)):
-    y_new = [y[-1][j] + h * dy_dx(y[-1], x[i-1])[j] for j in range(2)]
-    y.append(y_new)
-
-# Create a new div element to hold the plot
-'''
-plot_div = document.createElement('div')
-plot_div.id = 'plot'
-document.body.appendChild(plot_div)
-'''
-
-# Plot the solution using plotly.js
-data = [{'x': x, 'y': [y[i][0] for i in range(len(y))]}]
-layout = {'title': 'Mass-Spring-Damper System', 'xaxis': {'title': 'Time'}, 'yaxis': {'title': 'Displacement'}}
-window.Plotly.newPlot('mass-spring-damper', data, layout)
-</script>
-</pre>
-<p>This code defines a function dy_dx that represents the mass-spring-damper system with a PID controller. The gains of the PID controller are set to Kp = 10.0, Ki = 1.0, and Kd = 0.5. The Euler method is used to solve this system of equations for a range of x values from 0 to 20 with initial conditions of y0 = [0.0, 0.0, 0.0, 0.0]. The response of the system is then plotted on the webpage using <a href="https://plotly.com/javascript/">plotly.js</a>.</p>
-<p id="pid-control"></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
-<script type="text/python3">
-from browser import document, window
-
-m = 1.0  # mass
-k = 1.0  # spring constant
-c = 0.1  # damping coefficient
-
-Kp = 10.0  # proportional gain
-Ki = 1.0   # integral gain
-Kd = 0.5   # derivative gain
-
-def dy_dx(y, x):
-    y1, y2, e_int, e_prev = y
-    e = 1 - y1
-    de_dt = -y2
-    u = Kp * e + Ki * e_int + Kd * de_dt
-    return [y2, (u - k*y1 - c*y2)/m, e, e]
-
-x_start = 0
-x_end = 20
-n_points = 1000
-x = [x_start + i * (x_end - x_start) / (n_points - 1) for i in range(n_points)]
-y0 = [0.0, 0.0, 0.0, 0.0]
-h = x[1] - x[0]
-y = [y0]
-for i in range(1, len(x)):
-    y_new = [y[-1][j] + h * dy_dx(y[-1], x[i-1])[j] for j in range(4)]
-    y.append(y_new)
-
-'''
-# Create a new div element to hold the plot
-plot_div = document.createElement('div')
-plot_div.id = 'plot'
-document.body.appendChild(plot_div)
-'''
-
-# Plot the solution using plotly.js
-data = [{'x': x, 'y': [y[i][0] for i in range(len(y))], 'name': 'Output'},
-        {'x': x, 'y': [1 for _ in range(len(y))], 'name': 'Setpoint'}]
-layout = {'title': 'Mass-Spring-Damper System with PID Control', 'xaxis': {'title': 'Time'}, 'yaxis': {'title': 'Displacement'}}
-window.Plotly.newPlot('pid-control', data, layout)
-</script>
-</pre>
-<p height="480" id="container" width="640"></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" type="text/javascript"></script>
-<script type="text/python"></script>
-</pre><br />Brython << <a href='Brython.html'>Previous</a> </div>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="./../images/防7.jpg" width="760"/><br/></span></pre>
+<p>6.接著設定名稱</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="./../images/防8.jpg" width="760"/><br/></span></pre>
+<p>7.設置老師規定的IPv6位置 </p>
+<p>範例</p>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">cda pj3 第一組的第一位組員的指定 IP<br/> 2001:288:6004:17:2023:cda:1:1</div>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="500" src="./../images/防9.jpg" width="760"/><br/></span></pre>
+<p>8.接著將各組的zmq打開，注意zmq以及CoppeliaSim(4.5.1)需選擇有支援IPv6的版本 <a href="./../downloads/zmq0601">zmq</a>檔案 6/1</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"> <img alt="" height="450" src="./../images/連1.jpg" width="350"/><br/></span></pre>
+<p>10.然後在瀏覽器打  <a href="http://[組長IP]:23020，ru6dk3ej0">http://[組長IP]:23020</a>就可以看到組長場景並連線對戰</p>
+<p>範例 http://[2001:288:6004:17:2023:cd:0:1]:23020 </p>
+<br />note << <a href='note.html'>Previous</a> <a href='stud2.cycu.org.html'>Next</a> >> stud2.cycu.org</div>
         
     <!-- footer -->
       <div class="container">
