@@ -920,10 +920,32 @@ var winkVideoData2 = {
 <p></p>
 <p></p>
 <h2>輪盤記分板程式</h2>
-<p>3位數記分板程式</p>
-<p><a href="/downloads/05021.py">第一版</a></p>
-<p>還沒試驗</p>
-<h2>車子控制程式與設置</h2>
+<p>使用第4組的程式</p>
+<p>機械記分板程式:</p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_actuation()
+    sensor1 = sim.getObject('/sensor1')
+    sensor2 = sim.getObject('/sensor2')
+    result1=sim.readProximitySensor(sensor1)
+    result2=sim.readProximitySensor(sensor2)
+    --if (result1&gt;0)then
+
+
+    if (result1&gt;0)then
+        a3=a2+36*math.pi/180
+        sim.setJointTargetPosition(a1,a3)
+        a2=a3
+    elseif (result2&gt;0)then
+        b3=b2+36*math.pi/180
+        sim.setJointTargetPosition(b1,b3)
+        b2=b3
+ 
+    end
+        
+
+end</pre>
+<p>sysCall_actuation()為會一直重複執行的函式</p>
+<p>判斷sensor1和2是否有感測到東西判斷加分</p>
+<p>加分是採用軸旋轉每一分轉36度</p><h2>車子控制程式與設置</h2>
 <p><strong><span style="background-color: #ffff00;">完成組員：41023120</span></strong></p>
 <p>第一版<a href="/downloads/529">zmqRemoteApi_IPv6</a> </p>
 <p>還是連不到組長電腦</p>
@@ -947,6 +969,9 @@ var winkVideoData2 = {
 <p><a href="/downloads/newbing_bubbleRob_football pj3 0601.ttt">第二版 導入場地和車子</a></p>
 <pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"><img alt="" height="500" src="/images/0520.jpg" width="760"/><br/></span></pre>
 <p>5/26 計時板會計時 記分板可以計分但還是2位數 輪盤不受控制旋轉待解決</p>
+<p><a href="/downloads/完成.ttt">第三版 完成</a> 6/5</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr"><span class="Y2IQFc" lang="zh-TW"><img alt="" p="" src="/images/整體.png" width="760"/></span></pre>
+<p></p>
 <p><strong><span style="background-color: #ffff00;">完成組員：41023119</span></strong></p>
 <p><span style="background-color: #ffff00;">5/23 目前進度</span></p>
 <p>組合 scene 及 model</p>

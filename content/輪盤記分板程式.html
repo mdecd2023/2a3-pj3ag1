@@ -142,10 +142,32 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">輪盤記分板繪製 << <a href='輪盤記分板繪製.html'>Previous</a> <a href='車子控制程式與設置.html'>Next</a> >> 車子控制程式與設置<br /><h1>輪盤記分板程式</h1>
-<p>3位數記分板程式</p>
-<p><a href="./../downloads/05021.py">第一版</a></p>
-<p>還沒試驗</p>
-<br />輪盤記分板繪製 << <a href='輪盤記分板繪製.html'>Previous</a> <a href='車子控制程式與設置.html'>Next</a> >> 車子控制程式與設置</div>
+<p>使用第4組的程式</p>
+<p>機械記分板程式:</p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_actuation()
+    sensor1 = sim.getObject('/sensor1')
+    sensor2 = sim.getObject('/sensor2')
+    result1=sim.readProximitySensor(sensor1)
+    result2=sim.readProximitySensor(sensor2)
+    --if (result1&gt;0)then
+
+
+    if (result1&gt;0)then
+        a3=a2+36*math.pi/180
+        sim.setJointTargetPosition(a1,a3)
+        a2=a3
+    elseif (result2&gt;0)then
+        b3=b2+36*math.pi/180
+        sim.setJointTargetPosition(b1,b3)
+        b2=b3
+ 
+    end
+        
+
+end</pre>
+<p>sysCall_actuation()為會一直重複執行的函式</p>
+<p>判斷sensor1和2是否有感測到東西判斷加分</p>
+<p>加分是採用軸旋轉每一分轉36度</p><br />輪盤記分板繪製 << <a href='輪盤記分板繪製.html'>Previous</a> <a href='車子控制程式與設置.html'>Next</a> >> 車子控制程式與設置</div>
         
     <!-- footer -->
       <div class="container">
