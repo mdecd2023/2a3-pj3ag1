@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {3.3}建立記分板}{2}{section.3.3}%
 \contentsline {section}{\numberline {3.4}建立球場}{3}{section.3.4}%
 \contentsline {chapter}{\numberline {4}訓練環境}{5}{chapter.4}%
-\contentsline {section}{\numberline {4.1}CoppeliaSimEdu_4.5.1}{5}{section.4.1}%
+\contentsline {section}{\numberline {4.1}CoppeliaSimEdu 4.5.1}{5}{section.4.1}%
 \contentsline {chapter}{\numberline {5}模擬環境}{7}{chapter.5}%
 \contentsline {section}{\numberline {5.1}模擬模型}{7}{section.5.1}%
 \contentsline {section}{\numberline {5.2}CoppeliaSim模擬}{9}{section.5.2}%
