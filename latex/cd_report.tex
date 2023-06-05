@@ -105,7 +105,6 @@ Web-based Foosball Scene Design}
 {\hspace{36.5mm}卓\quad 桓 \quad 琮\quad(41023126)}\\[6pt]
 \hspace{32mm}\makebox[5cm][s]
 {\hspace{36.5mm}林\quad 敬 \quad 燐\quad(41023138)}\\[6pt]
-%設定文字盒子[寬度為5cm][對其方式為文字平均分分布於方框中]空白距離{36.5mm}\空白1em
 \end{LARGE}
 \end{flushleft}
 \vspace{6em}
@@ -113,10 +112,9 @@ Web-based Foosball Scene Design}
 {中華民國\hspace{3em} 
 112 \quad 年\quad 6\quad 月}}
 \end{titlepage}
-\newpage
 
 %=------------------------摘要-----------------------=%
-\input{abstract.tex}
+%\input{abstract.tex}
 \newpage
 %=------------------------目錄----------------------=%
 \renewcommand{\contentsname}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{目\quad 錄}}}
@@ -128,13 +126,7 @@ Web-based Foosball Scene Design}
 \renewcommand{\numberline}[1]{\loflabel~#1\hspace*{0.5em}}
 \listoffigures
 %\newcommand{\captioname}{圖}
-\newpage
-\renewcommand{\listtablename}{\centerline{\fontsize{18pt}{\baselineskip}\selectfont\textbf{表\quad 目\quad 錄 }}}
-\newcommand{\lotlabel}{表} %定義\lotlabel 文字為表
-\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{0.5em}}
-\listoftables
-
-\end{center}
+%\end{center}
 %=-------------------------內容----------------------=%
 \input{1_introduction.tex}
 \input{discuss.tex}
@@ -145,8 +137,8 @@ Web-based Foosball Scene Design}
 \input{6_suggestion.tex}
 \input{7_discussions.tex}
 %=---------------------參考文獻----------------------=%
-\input{8_reference.tex}
+%\input{8_reference.tex}
 %=---------------附錄-----------------=%
-\addcontentsline{toc}{chapter}{附錄} %新增目錄名稱
+%\addcontentsline{toc}{chapter}{附錄} %新增目錄名稱
 \input{9_appendix.tex}
-\newpage
+\end{document}
