@@ -167,7 +167,81 @@ img.add_border {
 end</pre>
 <p>sysCall_actuation()為會一直重複執行的函式</p>
 <p>判斷sensor1和2是否有感測到東西判斷加分</p>
-<p>加分是採用軸旋轉每一分轉36度</p><br />輪盤記分板繪製 << <a href='輪盤記分板繪製.html'>Previous</a> <a href='車子控制程式與設置.html'>Next</a> >> 車子控制程式與設置</div>
+<p>加分是採用軸旋轉每一分轉36度</p>
+<p>3位數記分板程式</p>
+<p><a href="./../downloads/05021.py">第一版</a></p>
+<p>還沒試驗</p>
+<p><span style="background-color: #ffcc99;">5/29-想法-editer:41023126</span></p>
+<p>馬達轉36度，就是1個位數，再用程式控制馬達進位，以下為<span style="background-color: #ff0000;">未成功的程式</span></p>
+<p><a href="./../downloads/pj3ag1/countboard-undone.txt">countboard-undone</a></p>
+<p>因為此程式無法使用，所以使用第四組<span>的程式</span></p>
+<p><img alt="" height="599" src="./../images/6-6chatgpt-1.png" width="677"/></p>
+<p><img alt="" height="707" src="./../images/6-6chatgpt-2.png" width="684"/></p>
+<p><img alt="" height="707" src="./../images/6-6chatgpt-3.png" width="684"/></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    
+    ball = sim.getObjectHandle('ball')
+    sensor = sim.getObjectHandle('/score_wall/sensor')
+    sensor2 = sim.getObjectHandle('/score_wall/sensor2')
+    gearShaft1 = sim.getObjectHandle('/scoreboard/1_board/1_gear_shaft')
+    gearShaft2 = sim.getObjectHandle('/scoreboard/2_board/2_gear_shaft')
+    gearShaft3 = sim.getObjectHandle('/scoreboard/3_board/3_gear_shaft')
+    gearShaft4 = sim.getObjectHandle('/scoreboard/4_board/4_gear_shaft')
+
+    
+    angle1 = 0
+    angle2 = 0
+    angle3 = 0
+    angle4 = 0
+    score1 = 0
+    score2 = 0
+end
+
+function updateScore()
+    
+    if angle4 &lt; 360 then
+        angle4 = angle4 + 36
+    elseif angle3 &lt; 360 then
+        angle3 = angle3 + 36
+    elseif angle2 &lt; 360 then
+        angle2 = angle2 + 36
+    elseif angle1 &lt; 360 then
+        angle1 = angle1 + 36
+    end
+
+    
+    if angle4 == 360 and angle3 == 360 and angle2 == 360 and angle1 == 360 then
+        if sim.readProximitySensor(sensor) &gt; 0 then
+            score1 = score1 + 1
+        elseif sim.readProximitySensor(sensor2) &gt; 0 then
+            score2 = score2 + 1
+        end
+
+        
+        angle1 = 0
+        angle2 = 0
+        angle3 = 0
+        angle4 = 0
+
+        
+        sim.setJointPosition(gearShaft1, angle1 * math.pi / 180)
+        sim.setJointPosition(gearShaft2, angle2 * math.pi / 180)
+        sim.setJointPosition(gearShaft3, angle3 * math.pi / 180)
+        sim.setJointPosition(gearShaft4, angle4 * math.pi / 180)
+
+        
+        sim.addStatusbarMessage("Score - Red: " .. score1 .. "  Blue: " .. score2)
+    end
+end
+
+function sysCall_actuation()
+    
+    if sim.readProximitySensor(sensor) &gt; 0 or sim.readProximitySensor(sensor2) &gt; 0 then
+        updateScore()
+    end
+end
+</pre>
+<p><br/><br/></p><br />輪盤記分板繪製 << <a href='輪盤記分板繪製.html'>Previous</a> <a href='車子控制程式與設置.html'>Next</a> >> 車子控制程式與設置</div>
         
     <!-- footer -->
       <div class="container">
