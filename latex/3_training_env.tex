@@ -18,29 +18,12 @@
  在模擬的模型上，進行了部分的設計變更，將原本的人機對打更改為機器對打，且因為搭配深度強化學習的訓練，模擬上須打進去程式讓我們吧個人都可以連線到開場景的那台主機電腦，也讓我們在運作上有問題時可以直接發問，設計變更的地方也可以快速完成。\\
 \begin{figure}[hbt!]
 \center
-\includegraphics[width=13cm]{picture1}
+\includegraphics[width=13cm]{pj3 error1}
 \caption{\Large 模擬場景圖}
 \label{model}
 \end{figure}
 
-\qquad 將原本Y軸移動機構移除,並將其改為固定在特定位置上，此固定座設計是取代原本鎖在光軸固定坐上的(圖.\ref{model} 代號 1)Y軸皮帶固定座(圖.\ref{axialseat})，並使光軸固定座可以通過連結固定做鎖固於桌面，如(圖.\ref{connectSeat})。\\
-
-\begin{figure}[hbt!]
-\center
-\includegraphics[width=8cm]{axialseat}
-\caption{\Large Y軸皮帶固定座}
-\label{axialseat}
-\end{figure}
-
-\begin{figure}[hbt!]
-\center
-\includegraphics[width=8cm]{connectSeat}
-\caption{\Large 連結固定座}
-\label{connectSeat}
-\end{figure}
-
-\newpage
-\qquad 分別在擊球器外側保留約冰球直徑1.5倍之區域作為得分判定區，如圖4.4中的紅色區域。\\
+\qquad 分別在擊球器外側保留約冰球直徑1.5倍之區域作為得分判定區，如圖中的紅色區域。\\
 \section{CoppeliaSim模擬}
  CoppeliaSim是具有集成開發環境的機器人模擬器,基於分佈式控制體系架構,可以通過嵌入式腳本，插件，ROS或BlueZero節點，RemoteAPI客戶端或自定義解決方案進行模型控制。\\
  \begin{figure}[hbt!]
