@@ -1,0 +1,62 @@
+function sysCall_init()
+    
+    ball = sim.getObjectHandle('ball')
+    sensor = sim.getObjectHandle('/score_wall/sensor')
+    sensor2 = sim.getObjectHandle('/score_wall/sensor2')
+    gearShaft1 = sim.getObjectHandle('/scoreboard/1_board/1_gear_shaft')
+    gearShaft2 = sim.getObjectHandle('/scoreboard/2_board/2_gear_shaft')
+    gearShaft3 = sim.getObjectHandle('/scoreboard/3_board/3_gear_shaft')
+    gearShaft4 = sim.getObjectHandle('/scoreboard/4_board/4_gear_shaft')
+
+    
+    angle1 = 0
+    angle2 = 0
+    angle3 = 0
+    angle4 = 0
+    score1 = 0
+    score2 = 0
+end
+
+function updateScore()
+    
+    if angle4 < 360 then
+        angle4 = angle4 + 36
+    elseif angle3 < 360 then
+        angle3 = angle3 + 36
+    elseif angle2 < 360 then
+        angle2 = angle2 + 36
+    elseif angle1 < 360 then
+        angle1 = angle1 + 36
+    end
+
+    
+    if angle4 == 360 and angle3 == 360 and angle2 == 360 and angle1 == 360 then
+        if sim.readProximitySensor(sensor) > 0 then
+            score1 = score1 + 1
+        elseif sim.readProximitySensor(sensor2) > 0 then
+            score2 = score2 + 1
+        end
+
+        
+        angle1 = 0
+        angle2 = 0
+        angle3 = 0
+        angle4 = 0
+
+        
+        sim.setJointPosition(gearShaft1, angle1 * math.pi / 180)
+        sim.setJointPosition(gearShaft2, angle2 * math.pi / 180)
+        sim.setJointPosition(gearShaft3, angle3 * math.pi / 180)
+        sim.setJointPosition(gearShaft4, angle4 * math.pi / 180)
+
+        
+        sim.addStatusbarMessage("Score - Red: " .. score1 .. "  Blue: " .. score2)
+    end
+end
+
+function sysCall_actuation()
+    
+    if sim.readProximitySensor(sensor) > 0 or sim.readProximitySensor(sensor2) > 0 then
+        updateScore()
+    end
+end
