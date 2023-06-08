@@ -12,10 +12,10 @@
 4. 球員尺寸範圍：長寬高各 0.2m, 重量 5kg。\\
 
 \section{建立球員}
-本組使用 CoppeliaSim 內的 primitive shape 來製作車子，由於初始的機器人為球型會導致在碰撞時容易翻倒，所以經過本組討論後在後續車體改良中更改為長方體使球員不容易翻倒。\\
+本組使用 CoppeliaSim 內的 primitive shape 來製作車子，之所以使用簡單的形狀來製作車子是因為在模擬時車子細節太複雜會導致模擬運行速度變慢。由於初始的機器人為球型會導致在碰撞時容易翻倒，所以經過本組討論後在後續車體改良中更改為長方體使球員不容易翻倒。\\
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=8cm]{0515}
+\includegraphics[width=10cm]{0515}
 \caption{\Large 第一版車體}\label{車體}
 \end{center}
 \end{figure}
@@ -23,7 +23,7 @@
 在執行控制車子程式時在移動左右轉彎時馬達產生偏移，後來發現是馬達座標設定錯誤直接而修改了定位，並且加上顏色及背號。\\
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=8cm]{0604-1}
+\includegraphics[width=12cm]{0604-1}
 \caption{\Large 車體導入場景}\label{車體導入場景}
 \end{center}
 \end{figure}
@@ -33,7 +33,7 @@
 LED 顯示計分是採用 NX 繪製出 stl 檔再導入 CoppeliaSim 中而程式部分後續會說明。\\
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=8cm]{ledscore}
+\includegraphics[width=10cm]{ledscore}
 \caption{\Large 記分板建立}\label{記分板建立}
 \end{center}
 \end{figure}
