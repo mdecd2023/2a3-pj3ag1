@@ -5,9 +5,10 @@
 \fontsize{14pt}{2.5pt}\sectionef
 
 \section{控制機器人程式}
+此控制機器人程式利用 Python 語言
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[height=5cm]{bubbleRob code 1}
+\includegraphics[height=8cm]{bubbleRob code 1}
 \caption{\Large 控制機器人程式之一}\label{控制機器人程式之一}
 \end{center}
 \end{figure} 
@@ -19,6 +20,8 @@
 \end{itemize}
 使用 zmqRemoteApi 中的 IPv6  導入了用於建立與 CoppeliaSim 之間通訊的 Remote API 相關程式庫，使得可以通過程式碼控制仿真場景和物件，建立了一個 RemoteAPIClient 物件 client，並將 IP 和埠號分別作為 CoppeliaSim 的 IP 地址和連接埠。\\
 這樣就建立了與 CoppeliaSim 的連線，使用 \texttt{client.getObject('sim')} 獲取了 CoppeliaSim 中的 sim 物件，該物件代表了整個仿真環境。透過這個物件，可以執行相關的仿真操作，再來透過  sim.startSimulation() 開始模擬。\\
+\newpage
+
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[height=8cm]{bubbleRob code 2}
@@ -31,4 +34,92 @@
 如果按下 'left' 鍵，則呼叫 setBubbleRobVelocity(-1.0, 1.0)，將機器人的速度設定為左轉。\\
 如果按下 'right' 鍵，則呼叫 setBubbleRobVelocity(1.0, -1.0)，將機器人的速度設定為右轉。\\
 如果按下 'q' 鍵，則停止仿真。若沒有按下上述任何按鍵，則呼叫 setBubbleRobVelocity(0.0, 0.0)，將機器人的速度設定為零，即停止移動。\\
+\newpage
+
+\section{記分板程式}
+此程式是使用 Lua 語言
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[height=8cm]{scorewall1}
+\caption{\Large LED 記分板程式之一}\label{LED 記分板程式之一}
+\end{center}
+\end{figure} 
+設定名稱為 sysCall_init 的函數，在程式初始化時被呼叫。該函數的主要目的是初始化一些變數並取得物件的句柄。\\
+\begin{itemize}
+\item scorewallb = 0、scorewalla = 0、scorewalld = 0、scorewallc = 0 用於初始化四個得分牆的變數，將初始值設為 0。\\
+\item \texttt{sim.getObject} 獲取了各感測器及球的句柄。\\
+\item \texttt{initialballPosition = sim.getObjectPosition(ball, -1)}：用於取得球體的初始位置。\\
+\item \texttt{initialballOrientation = sim.getObjectOrientation(ball, -1)}：用於取得球體的初始方向。\\
+\end{itemize}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[height=8cm]{scorewall2}
+\caption{\Large LED 記分板程式之二}\label{LED 記分板程式之二}
+\end{center}
+\end{figure} 
+定義了一個包含十個元素的表格，每個元素都是由七個二進制數字(0或1)組成的列表。每個列表代表一個數字(0到9)的數字模式，而最後一行程式碼將這些數字模式放入一個名為 score 的表格中，以便在程式中進行使用。\\
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[height=8cm]{scorewall3}
+\caption{\Large LED 記分板程式之三}\label{LED 記分板程式之三}
+\end{center}
+\end{figure}
+這段程式碼是一個迴圈，用於對記分板進行顏色設定，根據事先定義的數字模式進行，迴圈的運行範圍是從0到6每次遞增1，在迴圈的每次迭代中，會執行以下操作：
+\begin{itemize}
+\item scorewallb = 0、scorewalla = 0、scorewalld = 0、scorewallc = 0 用於初始化四個得分牆的變數，將初始值設為 0。\\
+\item 創建一個指向記分板的參考是由迴圈變量 j 指定。\\
+\item 檢查表格中的特定位置如果該位置的值等於 1，則使用 \texttt{sim.setShapeColor}函數設定記分板數字的顏色為紅色。\\
+\item 如果該位置的值不等於 1，使用 \texttt{sim.setShapeColor}函數設定記分板數字的顏色為白色。\\
+\end{itemize}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[height=8cm]{scorewall4}
+\caption{\Large LED 記分板程式之四}\label{LED 記分板程式之四}
+\end{center}
+\end{figure} 
+在此函式中，首先使用 \texttt{sim.readProximitySensor}函式讀取 sensor 的近接傳感器數值，並將結果存儲在 result 變數中，如果 scorewallb 小於 10，且如果 result 大於 0，表示與某個物體接觸。則執行以下操作：\\
+\begin{itemize}
+\item 將 score2 設定為 scorewallb 加 1。\\
+\item 進行一個迴圈從 0 到 9，每次遞增 1。\\
+\item 如果 score2 等於 i 進行另一個迴圈從 0 到 6 每次遞增 1，創建一個指向 scoreb 的參考由迴圈 j 變量檢查 score 表格中的特定位置，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
+\item 更新 scorewallb 的值為 score2。\\
+\item 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
+\item 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
+\end{itemize}
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[height=8cm]{scorewall5}
+\caption{\Large LED 記分板程式之五}\label{LED 記分板程式之五}
+\end{center}
+\end{figure} 
+反之如果 scorewallb 大於 9 則執行以下操作：\\
+\begin{itemize}
+\item 將 scorewallb 的值設定為 0。\\
+\item 進行一個迴圈從 0 到 6，每次遞增 1 創建一個指向 scoreb 物體的參考，該物體是由迴圈變量 j 指定的物體，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
+\item 將 score3 設定為 scorewalla 加 1。\\
+\item 更新 scorewallb 的值為 score2。\\
+\item 進行一個迴圈從 0 到 9，每次遞增 1 ，如果 score3 等於 i 進行一個迴圈從 0 到 6，每次遞增 1 創建一個指向 scoreb 物體的參考，該物體是由迴圈變量 j 指定的物體，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
+\item 更新 scorewalla 的值為 score3。\\
+\item 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
+\item 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
+\item 程式碼檢查兩個變數 scorewallb 和 scorewalla 是否都等於 9。如果兩個變數的值都等於 9 用  \texttt{sim.pauseSimulation()} 函式暫停仿真。\\
+\end{itemize}
+而另一隊記分板也是使用一樣的程式只是更改名稱。\\
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[height=8cm]{scorewall6}
+\caption{\Large LED 記分板程式之六}\label{LED 記分板程式之六}
+\end{center}
+\end{figure} 
+如果感測器感測到物體則執行以下操作：\\
+\begin{itemize}
+\item 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
+\item 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
+\end{itemize}
+
 \renewcommand{\baselinestretch}{1.0} %設定行距
