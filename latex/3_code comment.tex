@@ -1,7 +1,7 @@
 \chapter{程式碼說明}
 \renewcommand{\baselinestretch}{10.0} %設定行距
 \pagenumbering{arabic} %設定頁號阿拉伯數字
-\setcounter{page}{5}  %設定頁數
+\setcounter{page}{6}  %設定頁數
 \fontsize{14pt}{2.5pt}\sectionef
 
 \section{控制機器人程式}
@@ -44,12 +44,10 @@
 \end{center}
 \end{figure} 
 設定名稱為 sysCall init 的函數，在程式初始化時被呼叫。該函數的主要目的是初始化一些變數並取得物件的句柄。\\
-\begin{itemize}
-\item scorewallb = 0、scorewalla = 0、scorewalld = 0、scorewallc = 0 用於初始化四個得分牆的變數，將初始值設為 0。\\
-\item \texttt{sim.getObject} 獲取了各感測器及球的句柄。\\
-\item \texttt{initialballPosition = sim.getObjectPosition(ball, -1)}：用於取得球體的初始位置。\\
-\item \texttt{initialballOrientation = sim.getObjectOrientation(ball, -1)}：用於取得球體的初始方向。\\
-\end{itemize}
+1. scorewallb = 0、scorewalla = 0、scorewalld = 0、scorewallc = 0 用於初始化四個得分牆的變數，將初始值設為 0。\\
+2. \texttt{sim.getObject} 獲取了各感測器及球的句柄。\\
+3. \texttt{initialballPosition = sim.getObjectPosition(ball, -1)}：用於取得球體的初始位置。\\
+4. \texttt{initialballOrientation = sim.getObjectOrientation(ball, -1)}：用於取得球體的初始方向。\\
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -66,12 +64,10 @@
 \end{center}
 \end{figure}
 這段程式碼是一個迴圈，用於對記分板進行顏色設定，根據事先定義的數字模式進行，迴圈的運行範圍是從0到6每次遞增1，在迴圈的每次迭代中，會執行以下操作：
-\begin{itemize}
-\item scorewallb = 0、scorewalla = 0、scorewalld = 0、scorewallc = 0 用於初始化四個得分牆的變數，將初始值設為 0。\\
-\item 創建一個指向記分板的參考是由迴圈變量 j 指定。\\
-\item 檢查表格中的特定位置如果該位置的值等於 1，則使用 \texttt{sim.setShapeColor}函數設定記分板數字的顏色為紅色。\\
-\item 如果該位置的值不等於 1，使用 \texttt{sim.setShapeColor}函數設定記分板數字的顏色為白色。\\
-\end{itemize}
+1. scorewallb = 0、scorewalla = 0、scorewalld = 0、scorewallc = 0 用於初始化四個得分牆的變數，將初始值設為 0。\\
+2. 創建一個指向記分板的參考是由迴圈變量 j 指定。\\
+3. 檢查表格中的特定位置如果該位置的值等於 1，則使用 \texttt{sim.setShapeColor}函數設定記分板數字的顏色為紅色。\\
+4. 如果該位置的值不等於 1，使用 \texttt{sim.setShapeColor}函數設定記分板數字的顏色為白色。\\
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -80,14 +76,12 @@
 \end{center}
 \end{figure} 
 在此函式中，首先使用 \texttt{sim.readProximitySensor}函式讀取 sensor 的近接傳感器數值，並將結果存儲在 result 變數中，如果 scorewallb 小於 10，且如果 result 大於 0，表示與某個物體接觸。則執行以下操作：\\
-\begin{itemize}
-\item 將 score2 設定為 scorewallb 加 1。\\
-\item 進行一個迴圈從 0 到 9，每次遞增 1。\\
-\item 如果 score2 等於 i 進行另一個迴圈從 0 到 6 每次遞增 1，創建一個指向 scoreb 的參考由迴圈 j 變量檢查 score 表格中的特定位置，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
-\item 更新 scorewallb 的值為 score2。\\
-\item 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
-\item 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
-\end{itemize}
+1. 將 score2 設定為 scorewallb 加 1。\\
+2. 進行一個迴圈從 0 到 9，每次遞增 1。\\
+3. 如果 score2 等於 i 進行另一個迴圈從 0 到 6 每次遞增 1，創建一個指向 scoreb 的參考由迴圈 j 變量檢查 score 表格中的特定位置，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
+4. 更新 scorewallb 的值為 score2。\\
+5. 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
+6. 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -96,17 +90,15 @@
 \end{center}
 \end{figure} 
 反之如果 scorewallb 大於 9 則執行以下操作：\\
-\begin{itemize}
-\item 將 scorewallb 的值設定為 0。\\
-\item 進行一個迴圈從 0 到 6，每次遞增 1 創建一個指向 scoreb 物體的參考，該物體是由迴圈變量 j 指定的物體，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
-\item 將 score3 設定為 scorewalla 加 1。\\
-\item 更新 scorewallb 的值為 score2。\\
-\item 進行一個迴圈從 0 到 9，每次遞增 1 ，如果 score3 等於 i 進行一個迴圈從 0 到 6，每次遞增 1 創建一個指向 scoreb 物體的參考，該物體是由迴圈變量 j 指定的物體，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
-\item 更新 scorewalla 的值為 score3。\\
-\item 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
-\item 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
-\item 程式碼檢查兩個變數 scorewallb 和 scorewalla 是否都等於 9。如果兩個變數的值都等於 9 用  \texttt{sim.pauseSimulation()} 函式暫停仿真。\\
-\end{itemize}
+1. 將 scorewallb 的值設定為 0。\\
+2. 進行一個迴圈從 0 到 6，每次遞增 1 創建一個指向 scoreb 物體的參考，該物體是由迴圈變量 j 指定的物體，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
+3. 將 score3 設定為 scorewalla 加 1。\\
+4. 更新 scorewallb 的值為 score2。\\
+5. 進行一個迴圈從 0 到 9，每次遞增 1 ，如果 score3 等於 i 進行一個迴圈從 0 到 6，每次遞增 1 創建一個指向 scoreb 物體的參考，該物體是由迴圈變量 j 指定的物體，如果該位置的值等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為紅色，如果該位置的值不等於 1 使用 \texttt{sim.setShapeColor}函式設定 scoreb 物體的顏色為白色。\\
+6. 更新 scorewalla 的值為 score3。\\
+7. 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
+8. 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
+9. 程式碼檢查兩個變數 scorewallb 和 scorewalla 是否都等於 9。如果兩個變數的值都等於 9 用  \texttt{sim.pauseSimulation()} 函式暫停仿真。\\
 而另一隊記分板也是使用一樣的程式只是更改名稱。\\
 
 \begin{figure}[hbt!]
@@ -116,9 +108,7 @@
 \end{center}
 \end{figure} 
 如果感測器感測到物體則執行以下操作：\\
-\begin{itemize}
-\item 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
-\item 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
-\end{itemize}
+1. 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
+2. 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
 
 \renewcommand{\baselinestretch}{1.0} %設定行距
