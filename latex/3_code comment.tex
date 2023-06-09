@@ -20,6 +20,7 @@
 \end{itemize}
 使用 zmqRemoteApi 中的 IPv6  導入了用於建立與 CoppeliaSim 之間通訊的 Remote API 相關程式庫，使得可以通過程式碼控制仿真場景和物件，建立了一個 RemoteAPIClient 物件 client，並將 IP 和埠號分別作為 CoppeliaSim 的 IP 地址和連接埠。\\
 這樣就建立了與 CoppeliaSim 的連線，使用 \texttt{client.getObject('sim')} 獲取了 CoppeliaSim 中的 sim 物件，該物件代表了整個仿真環境。透過這個物件，可以執行相關的仿真操作，再來透過  sim.startSimulation() 開始模擬。\\
+\newpage
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -48,6 +49,7 @@
 2. \texttt{sim.getObject} 獲取了各感測器及球的句柄。\\
 3. \texttt{initialballPosition = sim.getObjectPosition(ball, -1)}：用於取得球體的初始位置。\\
 4. \texttt{initialballOrientation = sim.getObjectOrientation(ball, -1)}：用於取得球體的初始方向。\\
+\newpage
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -68,6 +70,7 @@
 2. 創建一個指向記分板的參考是由迴圈變量 j 指定。\\
 3. 檢查表格中的特定位置如果該位置的值等於 1，則使用 \texttt{sim.setShapeColor}函數設定記分板數字的顏色為紅色。\\
 4. 如果該位置的值不等於 1，使用 \texttt{sim.setShapeColor}函數設定記分板數字的顏色為白色。\\
+\newpage
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -82,6 +85,7 @@
 4. 更新 scorewallb 的值為 score2。\\
 5. 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
 6. 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
+\newpage
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -100,6 +104,7 @@
 8. 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
 9. 程式碼檢查兩個變數 scorewallb 和 scorewalla 是否都等於 9。如果兩個變數的值都等於 9 用  \texttt{sim.pauseSimulation()} 函式暫停仿真。\\
 而另一隊記分板也是使用一樣的程式只是更改名稱。\\
+\newpage
 
 \begin{figure}[hbt!]
 \begin{center}
@@ -110,5 +115,6 @@
 如果感測器感測到物體則執行以下操作：\\
 1. 使用 \texttt{sim.setObjectPosition} 函式將 ball 物體的位置設定為初始位置。\\
 2. 使用 \texttt{sim.setObjectOrientation} 函式將 ball 物體的方向設定為初始方向。\\
+\newpage
 
 \renewcommand{\baselinestretch}{1.0} %設定行距
