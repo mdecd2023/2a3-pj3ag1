@@ -149,7 +149,7 @@
 \end{figure} 
 1. totaltime = \texttt{sim.getSimulationTime()/4}： 計算從模擬開始到現在的總時間，並除以 4(為了調整時間的比例)。\\
 2. \texttt{time = 1200 - totaltime}：根據總時間計算剩餘時間，1200 這部分可依照自己需求去修改。\\
-3. \texttt{timemtd = math.floor((time/600)\%10)：根據剩餘時間計算十位數分鐘數字，math.floor 函數用於將計算結果向下取整，\% 表示取模運算符號，這裡是將時間除以 600 取其餘數，再取該餘數的整數部分。\\
+3. \texttt{timemtd = math.floor((time/600)\%10)}：根據剩餘時間計算十位數分鐘數字，math.floor 函數用於將計算結果向下取整，\% 表示取模運算符號，這裡是將時間除以 600 取其餘數，再取該餘數的整數部分。\\
 4. \texttt{for i = 0, 9, 1 do}：進行一個迴圈從 0 到 9，每次遞增 1。\\
 5. \texttt{if timemtd == i then}：檢查十位數分鐘是否等於當前迴圈數字。\\
 6. 在內部循環 \texttt{for j = 0, 6, 1 do} 中，進行顯示相關的操作。\\
