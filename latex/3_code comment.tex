@@ -155,8 +155,8 @@
 6. 在內部循環 \texttt{for j = 0, 6, 1 do} 中，進行顯示相關的操作。\\
 7. \texttt{local scorea = sim.getObject('./scorea[' .. j .. ']')}：獲取記分板十位數分鐘的句柄。\\
 8. \texttt{if score[i + 1][j + 1] == 1 then}：檢查特定位置上的數字是否為 1（即該位置需要亮起）。\\
-9. \texttt{sim.setShapeColor(scorea, nil, sim.colorcomponent_ambient_diffuse, {1, 0, 0})}：設置該顯示元素的顏色為紅色（表示亮起）。\\
-10. \texttt{sim.setShapeColor(scorea, nil, sim.colorcomponent_ambient_diffuse, {1, 1, 1})}：設置該顯示元素的顏色為白色（表示熄滅）。\\
+9. \texttt{sim.setShapeColor(scorea, nil, $sim.colorcomponent_ambient_diffuse$, {1, 0, 0})}：設置該顯示元素的顏色為紅色（表示亮起）。\\
+10. \texttt{sim.setShapeColor(scorea, nil, $sim.colorcomponent_ambient_diffuse$, {1, 1, 1})}：設置該顯示元素的顏色為白色（表示熄滅）。\\
 11. \texttt{timemtd = math.floor ((time/60)\%600)}：分別用於計算十位數分鐘數字，並根據結果進行相應的顯示操作。\\
 個位數分鐘與上面程式相同唯一不同的是 \texttt{timemud = math.floor((time/10)\%60)}用於計算個位數分鐘數字，並根據結果進行相應的顯示操作。\\
 \newpage
