@@ -119,6 +119,33 @@
 
 \begin{figure}[hbt!]
 \begin{center}
+\includegraphics[height=8cm]{scorecode1}
+\caption{\Large 機械式記分板程式之一}\label{機械式記分板程式之一}
+\end{center}
+\end{figure} 
+這段程式碼是命名 sysCall_init 為函數，在程式初始化時，該函數被呼叫。\\
+1. \texttt{sim.getObject}：獲取的物件的句柄並將其存儲在變數中。\\
+2. \texttt{sim.getJointTargetPosition}：獲取變數的目標位置並將其存儲在另一個變數中。\\
+\newpage
+
+\begin{figure}[hbt!]
+\begin{center}
+\includegraphics[height=8cm]{scorecode2}
+\caption{\Large 機械式記分板程式之二}\label{機械式記分板程式之二}
+\end{center}
+\end{figure} 
+這段程式碼將函數用於控制行為。\\
+1. \texttt{sim.getObject}：獲取的物件的句柄並將其存儲在變數中。\\
+2. \texttt{sim.readProximitySensor}：讀取感測器的數據，並將結果存儲在變數中。\\
+3. 如果 result1 大於 0，表示感測器偵測到物體，則執行以下操作：\\
+4. 計算新的目標位置 a3，為 a2 加上 36 度 (36*math.pi/180) 的角度。\\
+5. 使用 \texttt{sim.setJointTargetPosition} 將 a1 的目標位置設置為 a3。\\
+6. 更新變數 a2 為新的目標位置 a3。\\
+另一個記分板程式相同只是換了個名稱。\\
+\newpage
+
+\begin{figure}[hbt!]
+\begin{center}
 \includegraphics[height=6cm]{time1}
 \caption{\Large 計時器程式之一}\label{計時器程式之一}
 \end{center}
@@ -155,8 +182,8 @@
 6. 在內部循環 \texttt{for j = 0, 6, 1 do} 中，進行顯示相關的操作。\\
 7. \texttt{local scorea = sim.getObject('./scorea[' .. j .. ']')}：獲取記分板十位數分鐘的句柄。\\
 8. \texttt{if score[i + 1][j + 1] == 1 then}：檢查特定位置上的數字是否為 1（即該位置需要亮起）。\\
-9. \texttt{sim.setShapeColor(scorea, nil, $sim.colorcomponent_ambient_diffuse$, {1, 0, 0})}：設置該顯示元素的顏色為紅色（表示亮起）。\\
-10. \texttt{sim.setShapeColor(scorea, nil, $sim.colorcomponent_ambient_diffuse$, {1, 1, 1})}：設置該顯示元素的顏色為白色（表示熄滅）。\\
+9. \texttt{sim.setShapeColor(scorea, nil, sim.colorcomponent ambient diffuse, {1, 0, 0})}：設置該顯示元素的顏色為紅色（表示亮起）。\\
+10. \texttt{sim.setShapeColor(scorea, nil, sim.colorcomponent ambient diffuse, {1, 1, 1})}：設置該顯示元素的顏色為白色（表示熄滅）。\\
 11. \texttt{timemtd = math.floor ((time/60)\%600)}：分別用於計算十位數分鐘數字，並根據結果進行相應的顯示操作。\\
 個位數分鐘與上面程式相同唯一不同的是 \texttt{timemud = math.floor((time/10)\%60)}用於計算個位數分鐘數字，並根據結果進行相應的顯示操作。\\
 
@@ -166,9 +193,10 @@
 \caption{\Large 計時器程式之四}\label{計時器程式之四}
 \end{center}
 \end{figure} 
-程式與十位、個位數分鐘相同唯一不同的是 
+程式與十位、個位數分鐘相同唯一不同的是。\\
 1. \texttt{timestd = math.floor((time/10)\%10)} 用於計算十位數秒鐘數字，並根據結果進行相應的顯示操作。\\
 2. \texttt{timesud = math.floor(time/10)} 用於計算個位數秒鐘數字，並根據結果進行相應的顯示操作。\\
 3. 當時間小於 1 時停止模擬。\\
 \newpage
+
 \renewcommand{\baselinestretch}{1.0} %設定行距
